@@ -6,11 +6,10 @@
 class Skills
 {
 
-protected: //child classes need to mutate variables
+protected: 
     int skillStackCount;
     float skillDuration;
     float damagePerSecond;
-
     sf::Sprite skillSprite;
 
 public:

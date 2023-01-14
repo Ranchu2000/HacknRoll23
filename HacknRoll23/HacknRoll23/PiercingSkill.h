@@ -5,6 +5,7 @@
 
 class PiercingSkill : public Skills
 {
+public:
 	PiercingSkill();
 	~PiercingSkill();
 };

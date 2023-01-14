@@ -145,6 +145,7 @@
     <ClCompile Include="HacknRoll23.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="PiercingSkill.cpp" />
+    <ClCompile Include="SkillList.cpp" />
     <ClCompile Include="State.cpp" />
     <ClCompile Include="AnimationComponent.cpp" />
     <ClCompile Include="AttributeComponent.cpp" />
@@ -161,6 +162,7 @@
     <ClInclude Include="Enemy.h" />
     <ClInclude Include="imports.h" />
     <ClInclude Include="PiercingSkill.h" />
+    <ClInclude Include="SkillList.h" />
     <ClInclude Include="State.h" />
     <ClInclude Include="AnimationComponent.h" />
     <ClInclude Include="AttributeComponent.h" />
