@@ -41,7 +41,7 @@ public:
 
 	virtual void loseHP(const int hp, Vector2f projectileDirection, const float& dt);
 	virtual const bool isDead() const;
-	//const bool isBurning() const;
+	const bool isBurning() const;
 
 	virtual const AttributeComponent* getAttributeComp() const;
 
@@ -51,6 +51,5 @@ public:
 	virtual void update(const float& dt, sf::Vector2f& mouse_pos_view, const sf::View& view) = 0;
 	virtual void render(sf::RenderTarget& target, sf::Shader* shader = NULL, const sf::Vector2f light_position = sf::Vector2f(), const bool show_hitbox = false) = 0;
 
-private:
 };
 
