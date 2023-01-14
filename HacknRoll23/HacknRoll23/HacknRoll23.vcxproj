@@ -150,6 +150,7 @@
     <ClCompile Include="MeleeEnemy.cpp" />
     <ClCompile Include="PiercingSkill.cpp" />
     <ClCompile Include="Player.cpp" />
+    <ClCompile Include="Projectiles.cpp" />
     <ClCompile Include="SkillList.cpp" />
     <ClCompile Include="MainMenuState.cpp" />
     <ClCompile Include="Skills.cpp" />
@@ -173,6 +174,7 @@
     <ClInclude Include="imports.h" />
     <ClInclude Include="MeleeEnemy.h" />
     <ClInclude Include="PiercingSkill.h" />
+    <ClInclude Include="Projectiles.h" />
     <ClInclude Include="SkillList.h" />
     <ClInclude Include="Gui.h" />
     <ClInclude Include="MainMenuState.h" />
