@@ -150,6 +150,7 @@
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="SkillList.cpp" />
     <ClCompile Include="MainMenuState.cpp" />
+    <ClCompile Include="Skills.cpp" />
     <ClCompile Include="SplashState.cpp" />
     <ClCompile Include="State.cpp" />
     <ClCompile Include="AnimationComponent.cpp" />
@@ -171,6 +172,7 @@
     <ClInclude Include="SkillList.h" />
     <ClInclude Include="Gui.h" />
     <ClInclude Include="MainMenuState.h" />
+    <ClInclude Include="Skills.h" />
     <ClInclude Include="SplashState.h" />
     <ClInclude Include="State.h" />
     <ClInclude Include="AnimationComponent.h" />
@@ -179,7 +181,6 @@
     <ClInclude Include="HitboxComponent.h" />
     <ClInclude Include="MovementComponent.h" />
     <ClInclude Include="Player.h" />
-    <ClInclude Include="Skills.h" />
     <ClInclude Include="VictoryState.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
