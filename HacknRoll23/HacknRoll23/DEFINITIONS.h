@@ -43,10 +43,10 @@
 #define DARK_GREY_COLOR 73,113,116,255
 #define GREEN_COLOR 97,135,110,255
 
-//PLAYER & ENEMY
+//PLAYER
 #define PLAYER_TEXTURE_SHEET "Resources/Textures/PlayerSheet.png"
-#define MELEE_ENEMY_TEXTURE_SHEET "Resources/Textures/MeleeEnemy.png"
-#define RANGED_ENEMY_TEXTURE_SHEET "Resources/Textures/RangedEnemyComplete.png"
+#define BURN_PROJECTILE ""
+#define PLAYER_PROJECTILE "Resources/Textures/Resume.png"
 
 #define PLAYER_INITIAL_SPEED 570.f
 #define PLAYER_UPGRADE_SPEED 180.f
@@ -57,5 +57,7 @@
 #define PLAYER_UPGRADE_HEALTH 5
 #define MAX_UPGRADE_QTY 3
 
-
+#define MELEE_ENEMY_TEXTURE_SHEET "Resources/Textures/MeleeEnemy.png"
+#define RANGED_ENEMY_TEXTURE_SHEET "Resources/Textures/RangedEnemyComplete.png"
+#define ENEMY_PROJECTILE "Resources/Textures/ThumbsDown.png"
 #endif

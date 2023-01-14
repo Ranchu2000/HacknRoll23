@@ -4,7 +4,7 @@
 
 
 //Constructor and Destructor
-SkillList::SkillList() :  pierce()//, burn(2, 10)
+SkillList::SkillList() :  pierce(), burn(2, 10)
 {
 
 }
@@ -15,10 +15,10 @@ SkillList::~SkillList()
 }
 
 //accessors 
-//Skills& SkillList::getBurnSkill()
-//{
-//    //return this->burn;
-//}
+Skills& SkillList::getBurnSkill()
+{
+    return this->burn;
+}
 
 Skills& SkillList::getPiercingSkill()
 {

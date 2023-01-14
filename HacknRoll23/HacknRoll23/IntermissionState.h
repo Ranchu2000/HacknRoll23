@@ -38,7 +38,7 @@ class IntermissionState :
 		void initGui();
 		void resetGui();
 	public:
-		IntermissionState(StateData* state_data);
+		IntermissionState(StateData* state_data, std::map<std::string, int> upgradeCur, int waveNum);
 		~IntermissionState();
 
 		//Functions

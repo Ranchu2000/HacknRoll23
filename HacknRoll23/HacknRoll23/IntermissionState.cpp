@@ -157,8 +157,8 @@ void IntermissionState::resetGui() //reset UI
 	this->initGui();
 }
 
-IntermissionState::IntermissionState(StateData* state_data)
-	: State(state_data)
+IntermissionState::IntermissionState(StateData* state_data, std::map<std::string, int> upgradeCur, int waveNum)
+	: State(state_data), upgradeCur(upgradeCur), waveNum(waveNum)
 {
 	this->initFont();//initialise font first so initvariable can use
 	this->initVariables();
