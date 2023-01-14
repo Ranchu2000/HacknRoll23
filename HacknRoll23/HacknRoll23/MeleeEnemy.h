@@ -20,7 +20,6 @@ private:
 	void initVariables();
 	void initAI();
 	void initGUI();
-	void initAnimations();
 
 	sf::RectangleShape hpBar;
 	AIFollow* follow;

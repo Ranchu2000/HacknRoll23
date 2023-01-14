@@ -140,6 +140,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="AIFollow.cpp" />
+    <ClCompile Include="AIRanged.cpp" />
     <ClCompile Include="BurnSkill.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="Enemy.cpp" />
@@ -170,6 +171,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AIFollow.h" />
+    <ClInclude Include="AIRanged.h" />
     <ClInclude Include="BurnSkill.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="DEFINITIONS.h" />
