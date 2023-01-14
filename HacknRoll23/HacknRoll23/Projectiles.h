@@ -19,9 +19,11 @@ protected:
 
 
 public:
+	//constructor and destructor
 	Projectiles(sf::Vector2f start, sf::Vector2f normDir, int damage, int health, sf::Texture& tex);
 	~Projectiles();
 
+	//Accessors
 	sf::Sprite getSprite();
 	const sf::Vector2f getNormDir();
 	const float getSpeed();
@@ -29,9 +31,11 @@ public:
 	const int getDamage();
 	const bool isInEntity();
 
+	//Mutators
 	int reduceHealth();
 	void setPiercingEntity(bool status);
 
+	//Functions
 	virtual void move(const float& dt);
 	void render(sf::RenderTarget& target);
 

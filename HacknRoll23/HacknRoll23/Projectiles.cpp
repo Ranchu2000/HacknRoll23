@@ -1,5 +1,6 @@
 #include "Projectiles.h"
 
+//Constructor and destructors
 Projectiles::Projectiles(sf::Vector2f start, sf::Vector2f normDir, int damage, int health, sf::Texture& tex)
 {
 	this->start = start;
@@ -17,7 +18,7 @@ Projectiles::Projectiles(sf::Vector2f start, sf::Vector2f normDir, int damage, i
 Projectiles::~Projectiles() {}
 
 
-
+//Accessors
 sf::Sprite Projectiles::getSprite()
 {
 	return this->sprite;
@@ -43,7 +44,7 @@ const bool Projectiles::isInEntity()
 	return this->piercingEntity;
 }
 
-
+//Mutators
 int Projectiles::reduceHealth()
 {
 	this->health--;
@@ -54,6 +55,8 @@ void Projectiles::setPiercingEntity(bool status)
 	this->piercingEntity = status;
 }
 
+
+//Functions
 void Projectiles::move(const float& dt)
 {
 	this->sprite.setOrigin(this->sprite.getGlobalBounds().width / 2, this->sprite.getGlobalBounds().height / 2);
