@@ -43,15 +43,17 @@ void Enemy::loseHP(const int hp, Vector2f projectileDirection, const float& dt) 
 
 const bool Enemy::isDead() const {
 	// to be implemented once entity class is up
+	return true;
 }
 
 const bool Enemy::isBurning() const {
 	// to be implemented once entity class is up
+	return true;
 }
 
-const AttributeComponent* Enemy::getAttributeComp() const {
-	// to be implemented once entity class is up
-};
+//const AttributeComponent* Enemy::getAttributeComp() const {
+//	// to be implemented once entity class is up
+//};
 
 void Enemy::updateBurn() {
 	// to be implemented once entity class is up

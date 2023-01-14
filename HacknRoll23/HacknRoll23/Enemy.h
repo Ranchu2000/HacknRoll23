@@ -44,7 +44,7 @@ public:
 	virtual const bool isDead() const;
 	const bool isBurning() const;
 
-	virtual const AttributeComponent* getAttributeComp() const;
+	/*virtual const AttributeComponent* getAttributeComp() const;*/
 
 	virtual void updateAnimation(const float& dt) = 0;
 	void updateBurn();

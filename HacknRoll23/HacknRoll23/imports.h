@@ -32,5 +32,8 @@
 
 //Custom
 using namespace sf;
+#include "State.h"
+#include "Gui.h"
+
 
 #endif
