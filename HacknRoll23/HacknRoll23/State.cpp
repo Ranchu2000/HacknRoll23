@@ -9,7 +9,10 @@ State::State(StateData* state_data) {
 	this->gridSize = state_data->gridSize;
 	this->mapSize = state_data->mapSize;
 }
+State::~State()
+{
 
+}
 const bool& State::getQuit()const {
 	return this->quit;
 }

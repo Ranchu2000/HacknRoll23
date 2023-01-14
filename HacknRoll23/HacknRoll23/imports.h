@@ -32,5 +32,7 @@
 
 //Custom
 using namespace sf;
+#include "State.h"
+
 
 #endif
