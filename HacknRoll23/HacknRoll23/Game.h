@@ -3,6 +3,7 @@
 #include "imports.h"
 #include "State.h"
 #include "MainMenuState.h"
+#include "SplashState.h"
 
 class Game
 {
@@ -35,7 +36,5 @@ private:
 	void initWindow();
 	void initStateData();
 	void initState();
-
-
 };
 #endif
