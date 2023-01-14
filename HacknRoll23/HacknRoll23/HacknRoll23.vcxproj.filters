@@ -72,6 +72,12 @@
     <ClCompile Include="LevelsSystem.cpp">
       <Filter>Resource Files</Filter>
     </ClCompile>
+    <ClCompile Include="IntermissionState.cpp" />
+    <ClCompile Include="PlayerProjectile.cpp" />
+    <ClCompile Include="Projectiles.cpp" />
+    <ClCompile Include="AIRanged.cpp">
+      <Filter>Enemies</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Enemy.h">
@@ -152,6 +158,13 @@
     </ClInclude>
     <ClInclude Include="LevelsSystem.h">
       <Filter>Resource Files</Filter>
+    </ClInclude>
+    <ClInclude Include="IntermissionState.h" />
+    <ClInclude Include="PlayerProjectile.h" />
+    <ClInclude Include="Projectiles.h" />
+    <ClInclude Include="Skills.h" />
+    <ClInclude Include="AIRanged.h">
+      <Filter>Enemies</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
