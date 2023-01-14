@@ -13,7 +13,6 @@ private:
 	View view;
 
 	// Text/GUI
-	Font font;
 	Text hp;
 	Text hpText;
 	RectangleShape hpMaxBar;
@@ -43,7 +42,7 @@ private:
 
 public:
 	GameState(StateData* state_data, int waveNum);
-	~GameState();
+	virtual ~GameState();
 
 	void updateInput(const float& dt);
 	void updatePlayerInput(const float& dt);
