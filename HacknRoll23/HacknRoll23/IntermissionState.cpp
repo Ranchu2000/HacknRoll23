@@ -157,8 +157,8 @@ void IntermissionState::resetGui() //reset UI
 	this->initGui();
 }
 
-IntermissionState::IntermissionState(StateData* state_data)
-	: State(state_data)
+IntermissionState::IntermissionState(StateData* state_data, std::map<std::string, int> upgradeCur, int waveNum)
+	: State(state_data), upgradeCur(upgradeCur), waveNum(waveNum)
 {
 	this->initFont();//initialise font first so initvariable can use
 	this->initVariables();
@@ -209,9 +209,9 @@ void IntermissionState::updateButtons() //map buttons to functionality
 	{
 		if (nameBox.second->isPressed() && this->timer > this->coolDown) {
 			this->timer = 0;
-			if (this->upgradePoints > 0 && upgradeCur[nameBox.first] < MAX_UPGRADE_QTY) {
-				--upgradePoints;
-				upgradeCur[nameBox.first] += 1;
+			if (this->upgradePoints > 0 && this->upgradeCur[nameBox.first] < MAX_UPGRADE_QTY) {
+				--this->upgradePoints;
+				this->upgradeCur[nameBox.first] += 1;
 				int position = this->upgradeCur[nameBox.first];
 				int index = this->upgradeIndex[nameBox.first];
 

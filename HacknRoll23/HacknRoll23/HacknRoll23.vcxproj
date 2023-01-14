@@ -160,6 +160,7 @@
     <ClCompile Include="SkillList.cpp" />
     <ClCompile Include="MainMenuState.cpp" />
     <ClCompile Include="Skills.cpp" />
+    <ClCompile Include="SpawningLogic.cpp" />
     <ClCompile Include="SplashState.cpp" />
     <ClCompile Include="State.cpp" />
     <ClCompile Include="AnimationComponent.cpp" />
@@ -191,6 +192,8 @@
     <ClInclude Include="SkillList.h" />
     <ClInclude Include="Gui.h" />
     <ClInclude Include="MainMenuState.h" />
+    <ClInclude Include="Skills.h" />
+    <ClInclude Include="SpawningLogic.h" />
     <ClInclude Include="SplashState.h" />
     <ClInclude Include="State.h" />
     <ClInclude Include="AnimationComponent.h" />

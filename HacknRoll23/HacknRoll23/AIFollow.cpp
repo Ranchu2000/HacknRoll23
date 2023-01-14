@@ -1,6 +1,6 @@
 #include "AIFollow.h"
 
-AIFollow::AIFollow(Player& player, Enemy& Enemy): player(player), enemy(enemy) {}
+AIFollow::AIFollow(Player& player, Enemy& enemy): player(player), enemy(enemy) {}
 
 AIFollow::~AIFollow(){}
 

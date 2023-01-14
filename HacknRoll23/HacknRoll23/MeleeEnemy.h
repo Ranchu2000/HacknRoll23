@@ -7,7 +7,7 @@
 class MeleeEnemy: public Enemy
 {
 public: 
-	MeleeEnemy(float x, float y, sf::Texture texture_sheet, Player& player);
+	MeleeEnemy(float x, float y, sf::Texture& texture_sheet, Player& player);
 	virtual ~MeleeEnemy();
 
 	//Functions

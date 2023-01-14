@@ -1,7 +1,6 @@
 #ifndef animationcomponent_H
 #define animationcomponent_H
 
-#include "AnimationComponent.h"
 #include "imports.h"
 
 class AnimationComponent

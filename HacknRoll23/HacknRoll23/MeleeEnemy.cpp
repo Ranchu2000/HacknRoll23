@@ -16,7 +16,7 @@ void MeleeEnemy::initGUI()
 	this->hpBar.setSize(Vector2f(60.f, 10.f));
 };
 
-MeleeEnemy::MeleeEnemy(float x, float y, sf::Texture texture_sheet, Player& player)
+MeleeEnemy::MeleeEnemy(float x, float y, sf::Texture& texture_sheet, Player& player)
 	: Enemy(player)
 {
 	std::srand(time(0));
