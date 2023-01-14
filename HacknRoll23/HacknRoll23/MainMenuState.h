@@ -23,6 +23,11 @@ private:
 	Texture keyboardIconTexture;
 	Sprite keybaordIcon;
 
+	std::map<std::string, gui::Button*> buttons;
+	RectangleShape btnBG1;
+	RectangleShape btnBG2;
+
+
 	void initVariables();
 	void initFont();
 	void initGui();

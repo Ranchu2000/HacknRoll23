@@ -22,9 +22,35 @@ void MainMenuState::initGui() //init GUI
 	this->logo.setTexture(this->logoTexture);
 	this->logo.setPosition(gui::p2pX(8.f, vm), gui::p2pY(16.f, vm));
 
+
+
 	this->instructionBackground.setSize(Vector2f(static_cast<float>(vm.width), static_cast<float>(vm.height)));
 	this->instructionBackground.setFillColor(Color(BROWN_COLOR));
 	this->instructionBackground.setPosition(Vector2f(gui::p2pX(60.f,vm), 0.f));
+	//Buttons
+	float buttonWidth = 19.f;
+	float buttonHeight = 10.f;
+
+	this->buttons["GAME_STATE"] = new gui::Button(
+		gui::p2pX(20.f, vm), gui::p2pY(45.f, vm),
+		gui::p2pX(buttonWidth, vm), gui::p2pY(buttonHeight, vm),
+		&this->font, "Start", gui::calcCharSize(vm, 30),
+		Color(GOLD_COLOR), Color(NAVY_COLOR), Color(GREY_COLOR), Color(GREY_COLOR));
+
+	this->btnBG1.setSize(Vector2f(gui::p2pX(buttonWidth + 1.f, vm), gui::p2pY(buttonHeight + 1.2f, vm)));
+	this->btnBG1.setPosition(gui::p2pX(20.f, vm), gui::p2pY(45.f, vm));
+	this->btnBG1.setFillColor(Color(DARK_NAVY_COLOR));
+
+
+
+	this->buttons["EXIT_STATE"] = new gui::Button(
+		gui::p2pX(20.f, vm), gui::p2pY(70.f, vm),
+		gui::p2pX(buttonWidth, vm), gui::p2pY(buttonHeight, vm),
+		&this->font, "Quit", gui::calcCharSize(vm, 30),
+		Color(GOLD_COLOR), Color(NAVY_COLOR),Color(GREY_COLOR), Color(GREY_COLOR));
+	this->btnBG2.setSize(Vector2f(gui::p2pX(buttonWidth + 1.f, vm), gui::p2pY(buttonHeight + 1.2f, vm)));
+	this->btnBG2.setPosition(gui::p2pX(20.f, vm), gui::p2pY(70.f, vm));
+	this->btnBG2.setFillColor(Color(DARK_NAVY_COLOR));
 }
 
 void MainMenuState::resetGui() //reset UI
@@ -50,6 +76,10 @@ void MainMenuState::updateInput(const float& dt)
 
 void MainMenuState::updateButtons() //map buttons to functionality
 {
+	for (auto& btn : this->buttons)
+	{
+		btn.second->update(this->mousePosWindow);
+	}
 
 
 }
@@ -63,7 +93,9 @@ void MainMenuState::update(const float& dt)
 
 void MainMenuState::renderButtons(sf::RenderTarget& target)
 {
-	
+	for (auto& btn : this->buttons) {
+		btn.second->render(target);
+	}
 }
 
 void MainMenuState::render(sf::RenderTarget* target) //draw stuff
@@ -73,4 +105,7 @@ void MainMenuState::render(sf::RenderTarget* target) //draw stuff
 	target->draw(this->background);
 	target->draw(this->logo);
 	target->draw(this->instructionBackground);
+	target->draw(this->btnBG1);
+	target->draw(this->btnBG2);
+	this->renderButtons(*target);
 }
