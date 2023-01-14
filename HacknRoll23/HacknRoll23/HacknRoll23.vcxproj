@@ -146,6 +146,7 @@
     <ClCompile Include="GameState.cpp" />
     <ClCompile Include="GameOverState.cpp" />
     <ClCompile Include="Gui.cpp" />
+    <ClCompile Include="IntermissionState.cpp" />
     <ClCompile Include="LevelsSystem.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MeleeEnemy.cpp" />
@@ -176,6 +177,7 @@
     <ClInclude Include="GameState.h" />
     <ClInclude Include="GameOverState.h" />
     <ClInclude Include="imports.h" />
+    <ClInclude Include="IntermissionState.h" />
     <ClInclude Include="LevelsSystem.h" />
     <ClInclude Include="MeleeEnemy.h" />
     <ClInclude Include="PiercingSkill.h" />
