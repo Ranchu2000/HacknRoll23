@@ -32,6 +32,7 @@
 
 //Custom
 using namespace sf;
+#include "VectorMath.h"
 #include "State.h"
 #include "Gui.h"
 

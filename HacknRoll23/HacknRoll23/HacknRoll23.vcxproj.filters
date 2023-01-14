@@ -1,3 +1,172 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="Game.cpp" />
+    <ClCompile Include="Enemy.cpp">
+      <Filter>Enemies</Filter>
+    </ClCompile>
+    <ClCompile Include="AIFollow.cpp">
+      <Filter>Enemies</Filter>
+    </ClCompile>
+    <ClCompile Include="AnimationComponent.cpp">
+      <Filter>Entities\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="AttributeComponent.cpp">
+      <Filter>Entities\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="GameOverState.cpp">
+      <Filter>States</Filter>
+    </ClCompile>
+    <ClCompile Include="GameState.cpp">
+      <Filter>States</Filter>
+    </ClCompile>
+    <ClCompile Include="MainMenuState.cpp">
+      <Filter>States</Filter>
+    </ClCompile>
+    <ClCompile Include="MovementComponent.cpp">
+      <Filter>Entities\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="HitboxComponent.cpp">
+      <Filter>Entities\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="Entity.cpp">
+      <Filter>Entities</Filter>
+    </ClCompile>
+    <ClCompile Include="MeleeEnemy.cpp">
+      <Filter>Enemies</Filter>
+    </ClCompile>
+    <ClCompile Include="VictoryState.cpp">
+      <Filter>States</Filter>
+    </ClCompile>
+    <ClCompile Include="State.cpp">
+      <Filter>States</Filter>
+    </ClCompile>
+    <ClCompile Include="SplashState.cpp">
+      <Filter>States</Filter>
+    </ClCompile>
+    <ClCompile Include="PiercingSkill.cpp">
+      <Filter>Skills</Filter>
+    </ClCompile>
+    <ClCompile Include="SkillList.cpp">
+      <Filter>Skills</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>Entities</Filter>
+    </ClCompile>
+    <ClCompile Include="BurnSkill.cpp">
+      <Filter>Skills</Filter>
+    </ClCompile>
+    <ClCompile Include="Gui.cpp">
+      <Filter>GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="VectorMath.cpp">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Enemy.h">
+      <Filter>Enemies</Filter>
+    </ClInclude>
+    <ClInclude Include="AIFollow.h">
+      <Filter>Enemies</Filter>
+    </ClInclude>
+    <ClInclude Include="AnimationComponent.h">
+      <Filter>Entities\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="AttributeComponent.h">
+      <Filter>Entities\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="GameOverState.h">
+      <Filter>States</Filter>
+    </ClInclude>
+    <ClInclude Include="GameState.h">
+      <Filter>States</Filter>
+    </ClInclude>
+    <ClInclude Include="MainMenuState.h">
+      <Filter>States</Filter>
+    </ClInclude>
+    <ClInclude Include="MovementComponent.h">
+      <Filter>Entities\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="HitboxComponent.h">
+      <Filter>Entities\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="Entity.h">
+      <Filter>Entities</Filter>
+    </ClInclude>
+    <ClInclude Include="MeleeEnemy.h">
+      <Filter>Enemies</Filter>
+    </ClInclude>
+    <ClInclude Include="VictoryState.h">
+      <Filter>States</Filter>
+    </ClInclude>
+    <ClInclude Include="State.h">
+      <Filter>States</Filter>
+    </ClInclude>
+    <ClInclude Include="SplashState.h">
+      <Filter>States</Filter>
+    </ClInclude>
+    <ClInclude Include="DEFINITIONS.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PiercingSkill.h">
+      <Filter>Skills</Filter>
+    </ClInclude>
+    <ClInclude Include="SkillList.h">
+      <Filter>Skills</Filter>
+    </ClInclude>
+    <ClInclude Include="Skills.h">
+      <Filter>Skills</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>Entities</Filter>
+    </ClInclude>
+    <ClInclude Include="Game.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="imports.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="BurnSkill.h">
+      <Filter>Skills</Filter>
+    </ClInclude>
+    <ClInclude Include="Gui.h">
+      <Filter>GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="VectorMath.h">
+      <Filter>Resource Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Enemies">
+      <UniqueIdentifier>{f1ac6ac0-6cfc-42e5-a34e-00809599b63c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Entities">
+      <UniqueIdentifier>{bf067325-ac7c-48d6-bf23-08f4e47c8e22}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Entities\Components">
+      <UniqueIdentifier>{b038cd45-a8b1-4e6d-8898-2c04604c9a56}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="States">
+      <UniqueIdentifier>{e0a3f33a-a9bc-43b1-a630-82f393341311}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{747223ff-c5ad-4b6d-b27c-5ea4b60d66c9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Skills">
+      <UniqueIdentifier>{35e6b46b-aa18-46fd-a9ea-8a191d33caf7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{07d788bc-f820-4f25-b8aa-c8aa88fa81d0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GUI">
+      <UniqueIdentifier>{53515c41-9522-4678-b6fa-20ce7e6499c1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{63640ffd-d587-411a-b076-1f0e2f4b74f8}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
 </Project>
