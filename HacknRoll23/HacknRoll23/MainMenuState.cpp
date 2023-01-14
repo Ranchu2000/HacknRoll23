@@ -18,11 +18,9 @@ void MainMenuState::initGui() //init GUI
 	this->background.setSize(Vector2f(static_cast<float>(vm.width),static_cast<float>(vm.height)));
 	this->background.setFillColor(Color(DARK_BLUE_COLOR));
 
-	this->logoTexture.loadFromFile(LOGO_FILEPATH);
+	this->logoTexture.loadFromFile(TITLE_FILEPATH);
 	this->logo.setTexture(this->logoTexture);
 	this->logo.setPosition(gui::p2pX(8.f, vm), gui::p2pY(16.f, vm));
-
-
 
 	this->instructionBackground.setSize(Vector2f(static_cast<float>(vm.width), static_cast<float>(vm.height)));
 	this->instructionBackground.setFillColor(Color(BROWN_COLOR));

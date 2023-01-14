@@ -42,7 +42,6 @@ public:
 	void unpauseState();
 
 	virtual void updateMousePositions(View* view = NULL);
-	virtual void updateInput(const float& dt) = 0;
 	virtual void update(const float& dt) = 0;
 	virtual void render(RenderTarget* target = NULL) = 0;
 };
