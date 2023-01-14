@@ -9,9 +9,13 @@
 #define TITLE "Jobpocalypse"
 #define FRAME_LIMIT 120
 #define VERTICAL_SYNC false
+#define SPLASH_TIME 1.5f
 
 #define PIXEL_FONT_FILEPATH "Resources/Font/Pixel.ttf"
 #define LOGO_FILEPATH "Resources/Res/Logo.png"
+#define TITLE_FILEPATH "Resources/Res/Title.png"
+
+
 #define NAVY_COLOR 21,0,80
 #define BROWN_COLOR 51,43,40,255
 #define RED_COLOR 119,47,50,255
