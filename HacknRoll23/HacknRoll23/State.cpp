@@ -6,8 +6,6 @@ State::State(StateData* state_data) {
 	this->states = state_data->states;
 	this->quit = false;
 	this->paused = false;
-	this->keyTime = 0.f;
-	this->keyTimeMax = 10.f;
 	this->gridSize = state_data->gridSize;
 	this->mapSize = state_data->mapSize;
 }
@@ -16,15 +14,6 @@ const bool& State::getQuit()const {
 	return this->quit;
 }
 
-const bool State::getKeyTIme()
-{
-	if (this->keyTime >= this->keyTimeMax)
-	{
-		this->keyTime = 0.f;
-		return true;
-	}
-	return false;
-}
 
 void State::endState()
 {
@@ -41,7 +30,7 @@ void State::unpauseState()
 	this->paused = false;
 }
 
-void State::updateMousePositions(sf::View* view)
+void State::updateMousePositions(sf::View* view) //mouse info
 {
 	this->mousePosScreen = Mouse::getPosition();
 	this->mousePosWindow = Mouse::getPosition(*this->window);
@@ -54,10 +43,4 @@ void State::updateMousePositions(sf::View* view)
 			static_cast<int>(this->mousePosView.y) / static_cast<int>(this->gridSize)
 		);
 	this->window->setView(this->window->getDefaultView());
-}
-
-void State::updateKeyTime(const float& dt)
-{
-	if (this->keyTime < this->keyTimeMax)
-		this->keyTime += 100.f * dt;
 }

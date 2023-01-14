@@ -22,8 +22,6 @@ protected:
 
 	bool quit;
 	bool paused;
-	float keyTime;
-	float keyTimeMax;
 	float gridSize;
 	float mapSize;
 
@@ -38,14 +36,12 @@ public:
 	virtual ~State();
 
 	const bool& getQuit() const;
-	const bool getKeyTIme();
 
 	void endState();
 	void pauseState();
 	void unpauseState();
 
 	virtual void updateMousePositions(View* view = NULL);
-	virtual void updateKeyTime(const float& dt);
 	virtual void updateInput(const float& dt) = 0;
 	virtual void update(const float& dt) = 0;
 	virtual void render(RenderTarget* target = NULL) = 0;
