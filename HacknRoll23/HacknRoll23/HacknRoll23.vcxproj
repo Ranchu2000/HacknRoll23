@@ -139,6 +139,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="AIFollow.cpp" />
     <ClCompile Include="BurnSkill.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="Enemy.cpp" />
@@ -146,6 +147,7 @@
     <ClCompile Include="GameOverState.cpp" />
     <ClCompile Include="Gui.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="MeleeEnemy.cpp" />
     <ClCompile Include="PiercingSkill.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="SkillList.cpp" />
@@ -161,6 +163,7 @@
     <ClCompile Include="VictoryState.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AIFollow.h" />
     <ClInclude Include="BurnSkill.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="DEFINITIONS.h" />
@@ -168,6 +171,7 @@
     <ClInclude Include="GameState.h" />
     <ClInclude Include="GameOverState.h" />
     <ClInclude Include="imports.h" />
+    <ClInclude Include="MeleeEnemy.h" />
     <ClInclude Include="PiercingSkill.h" />
     <ClInclude Include="SkillList.h" />
     <ClInclude Include="Gui.h" />
