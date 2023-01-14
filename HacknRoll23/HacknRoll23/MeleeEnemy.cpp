@@ -16,8 +16,6 @@ void MeleeEnemy::initGUI()
 	this->hpBar.setSize(Vector2f(60.f, 10.f));
 };
 
-void MeleeEnemy::initAnimations() {};
-
 MeleeEnemy::MeleeEnemy(float x, float y, sf::Texture texture_sheet, Player& player)
 	: Enemy(player)
 {
@@ -25,11 +23,11 @@ MeleeEnemy::MeleeEnemy(float x, float y, sf::Texture texture_sheet, Player& play
 	this->initVariables();
 	this->initGUI();
 	this->createAnimation(texture_sheet);
-	this->initAnimations();
 	this->createHitbox(this->sprite, 0.f, 0.f, 64.f, 64.f);
 	this->createMovement((rand() % (51)) + 400.f, 500.f, 200.f);
 	this->createAttribute(1, 5, 1);
 	this->setPosition(x, y);
+	this->initAnimations();
 
 	this->follow = new AIFollow(player, *this);
 };
