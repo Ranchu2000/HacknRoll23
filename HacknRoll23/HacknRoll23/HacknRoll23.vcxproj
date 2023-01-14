@@ -145,6 +145,7 @@
     <ClCompile Include="GameState.cpp" />
     <ClCompile Include="GameOverState.cpp" />
     <ClCompile Include="Gui.cpp" />
+    <ClCompile Include="IntermissionState.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="PiercingSkill.cpp" />
     <ClCompile Include="SkillList.cpp" />
@@ -166,6 +167,7 @@
     <ClInclude Include="GameState.h" />
     <ClInclude Include="GameOverState.h" />
     <ClInclude Include="imports.h" />
+    <ClInclude Include="IntermissionState.h" />
     <ClInclude Include="PiercingSkill.h" />
     <ClInclude Include="SkillList.h" />
     <ClInclude Include="Gui.h" />

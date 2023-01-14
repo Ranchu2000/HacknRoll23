@@ -1,3 +1,48 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="BurnSkill.cpp" />
+    <ClCompile Include="Game.cpp" />
+    <ClCompile Include="Enemy.cpp" />
+    <ClCompile Include="GameState.cpp" />
+    <ClCompile Include="GameOverState.cpp" />
+    <ClCompile Include="Gui.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="PiercingSkill.cpp" />
+    <ClCompile Include="SkillList.cpp" />
+    <ClCompile Include="MainMenuState.cpp" />
+    <ClCompile Include="SplashState.cpp" />
+    <ClCompile Include="State.cpp" />
+    <ClCompile Include="AnimationComponent.cpp" />
+    <ClCompile Include="AttributeComponent.cpp" />
+    <ClCompile Include="Entity.cpp" />
+    <ClCompile Include="HitboxComponent.cpp" />
+    <ClCompile Include="MovementComponent.cpp" />
+    <ClCompile Include="VictoryState.cpp" />
+    <ClCompile Include="IntermissionState.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="BurnSkill.h" />
+    <ClInclude Include="Game.h" />
+    <ClInclude Include="DEFINITIONS.h" />
+    <ClInclude Include="Enemy.h" />
+    <ClInclude Include="GameState.h" />
+    <ClInclude Include="GameOverState.h" />
+    <ClInclude Include="imports.h" />
+    <ClInclude Include="PiercingSkill.h" />
+    <ClInclude Include="SkillList.h" />
+    <ClInclude Include="Gui.h" />
+    <ClInclude Include="MainMenuState.h" />
+    <ClInclude Include="SplashState.h" />
+    <ClInclude Include="State.h" />
+    <ClInclude Include="AnimationComponent.h" />
+    <ClInclude Include="AttributeComponent.h" />
+    <ClInclude Include="Entity.h" />
+    <ClInclude Include="HitboxComponent.h" />
+    <ClInclude Include="MovementComponent.h" />
+    <ClInclude Include="Player.h" />
+    <ClInclude Include="Skills.h" />
+    <ClInclude Include="VictoryState.h" />
+    <ClInclude Include="IntermissionState.h" />
+  </ItemGroup>
 </Project>
