@@ -29,6 +29,8 @@ private:
 	RectangleShape btnBG1;
 	RectangleShape btnBG2;
 
+	std::map<std::string, int> initialStats;
+	int initialWave;
 
 	void initVariables();
 	void initFont();
