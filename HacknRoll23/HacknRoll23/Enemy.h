@@ -2,10 +2,9 @@
 
 #include "imports.h"
 #include "Entity.h"
+#include "Player.h"
 
 class AIFollow;
-class Player;
-class AttributeComponent;
 
 class Enemy: public Entity
 {
@@ -42,9 +41,9 @@ public:
 
 	virtual void loseHP(const int hp, Vector2f projectileDirection, const float& dt);
 	virtual const bool isDead() const;
-	const bool isBurning() const;
+	//const bool isBurning() const;
 
-	/*virtual const AttributeComponent* getAttributeComp() const;*/
+	virtual const AttributeComponent* getAttributeComp() const;
 
 	virtual void updateAnimation(const float& dt) = 0;
 	void updateBurn();

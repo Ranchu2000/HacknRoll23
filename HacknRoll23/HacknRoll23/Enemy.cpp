@@ -59,9 +59,9 @@ const bool Enemy::isDead() const {
 	return false;
 }
 
-const bool Enemy::isBurning() const {
-	// to be implemented once skiils class up
-}
+//const bool Enemy::isBurning() const {
+//	// to be implemented once skiils class up
+//}
 
 const AttributeComponent* Enemy::getAttributeComp() const {
 	// to be implemented once skills class up
