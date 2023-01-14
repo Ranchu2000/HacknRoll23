@@ -147,6 +147,7 @@
     <ClCompile Include="Gui.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="PiercingSkill.cpp" />
+    <ClCompile Include="Player.cpp" />
     <ClCompile Include="SkillList.cpp" />
     <ClCompile Include="MainMenuState.cpp" />
     <ClCompile Include="SplashState.cpp" />
