@@ -4,6 +4,7 @@
 #include "GameOverState.h"
 #include"VictoryState.h"
 #include "imports.h"
+#include "IntermissionState.h"
 
 class MainMenuState:
 	public State

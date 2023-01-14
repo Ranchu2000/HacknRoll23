@@ -94,7 +94,7 @@ void MainMenuState::updateButtons() //map buttons to functionality
 	if (this->buttons["EXIT_STATE"]->isPressed())
 	{
 		//test
-		this->states->push(new VictoryState(this->stateData));
+		this->states->push(new IntermissionState(this->stateData));
 		//this->window->close();
 		this->endState();// ensure everything ends
 	}
