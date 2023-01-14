@@ -137,6 +137,10 @@ void gui::Button::update(const sf::Vector2i& mousePosWindow)
 	if (this->shape.getGlobalBounds().contains(static_cast<sf::Vector2f>(mousePosWindow)))
 	{
 		this->buttonState = BTN_HOVER;
+		if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
+		{
+			this->buttonState = BTN_ACTIVE;
+		}
 	}
 
 	switch (this->buttonState)
@@ -152,7 +156,11 @@ void gui::Button::update(const sf::Vector2i& mousePosWindow)
 		this->text.setFillColor(this->textHoverColor);
 		this->shape.setOutlineColor(this->outlineColor);
 		break;
-
+	case BTN_ACTIVE:
+		this->shape.setFillColor(this->hoverColor);
+		this->text.setFillColor(this->textHoverColor);
+		this->shape.setOutlineColor(this->outlineColor);
+		break;
 	default:
 		this->shape.setFillColor(sf::Color::Red);
 		this->text.setFillColor(sf::Color::Blue);

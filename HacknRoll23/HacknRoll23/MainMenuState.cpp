@@ -77,11 +77,16 @@ void MainMenuState::updateInput(const float& dt)
 void MainMenuState::updateButtons() //map buttons to functionality
 {
 	for (auto& btn : this->buttons)
-	{
 		btn.second->update(this->mousePosWindow);
+
+	if (this->buttons["GAME_STATE"]->isPressed())
+		std::cout << "gamestate" << "\n";//load game state
+
+	if (this->buttons["EXIT_STATE"]->isPressed())
+	{
+		this->window->close();
+		this->endState();// ensure everything ends
 	}
-
-
 }
 
 void MainMenuState::update(const float& dt)
