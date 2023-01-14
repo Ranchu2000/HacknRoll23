@@ -10,10 +10,12 @@ void GameState::initVariables()
 
 void GameState::initFonts()
 {
+	this->font.loadFromFile(PIXEL_FONT_FILEPATH);
 }
 
 void GameState::initPlayer()
 {
+
 }
 
 void GameState::initGui()
@@ -32,6 +34,10 @@ GameState::GameState(StateData* state_data, int waveNum) : State(state_data), wa
 	this->initPlayer();
 }
 
+GameState::~GameState()
+{
+}
+
 void GameState::updateInput(const float& dt)
 {
 }
@@ -41,6 +47,10 @@ void GameState::updatePlayerInput(const float& dt)
 }
 
 void GameState::updatePlayer(const float& dt)
+{
+}
+
+void GameState::updateView(const float& dt)
 {
 }
 
