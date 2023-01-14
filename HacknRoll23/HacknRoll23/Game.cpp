@@ -11,7 +11,7 @@ void Game::initVariables() {
 void Game::initWindow() {
 	ContextSettings settings;
 	settings.antialiasingLevel = 0;
-	this->window = new RenderWindow(VideoMode(SCREEN_WIDTH, SCREEN_WIDTH), TITLE, Style::Close);
+	this->window = new RenderWindow(VideoMode(SCREEN_WIDTH, SCREEN_HEIGHT), TITLE, Style::Default);
 	this->window->setFramerateLimit(FRAME_LIMIT);
 	this->window->setVerticalSyncEnabled(VERTICAL_SYNC);
 }
@@ -24,6 +24,8 @@ void Game::initStateData() {
 }
 void Game::initState() {
 	//push states one by one
+	this->states.push(new MainMenuState(&this->stateData));
+	this->states.push(new SplashState(&this->stateData));
 }
 
 Game::Game() {
@@ -33,7 +35,7 @@ Game::Game() {
 	this->initState();
 }
 
-Game::Game() {
+Game::~Game() {
 	delete this->window;
 	//states emptying
 	while (!this->states.empty())
@@ -75,6 +77,11 @@ void Game::update() {
 
 void Game::render() {
 	this->window->clear();
+	if (!this->states.empty()){
+		
+		this->states.top()->render();
+	}
+		
 	this->window->display();
 }
 
