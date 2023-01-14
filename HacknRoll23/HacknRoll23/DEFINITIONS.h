@@ -20,7 +20,13 @@
 #define WON_ICON_FILEPATH "Resources/Res/Won.png"
 #define PRIZE_ICON_FILEPATH "Resources/Res/Prize.png"
 
-
+//intermission State
+#define ATTACK_FILEPATH "Resources/Res/Angular.png"
+#define HEALTH_FILEPATH "Resources/Res/Postgresql.png"
+#define SPEED_FILEPATH "Resources/Res/Swift.png"
+#define FIRING_FILEPATH "Resources/Res/Redux.png"
+#define BURN_FILEPATH "Resources/Res/Firebase.png"
+#define PIERCE_FILEPATH "Resources/Res/Vue.png"
 
 #define NAVY_COLOR 21,0,80
 #define BROWN_COLOR 51,43,40,255
