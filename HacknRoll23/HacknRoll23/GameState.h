@@ -13,6 +13,11 @@ private:
 	View view;
 
 	// Text/GUI
+	Font font;
+
+	Texture pauseText;
+	Sprite pauseButton;
+
 	Text hp;
 	Text hpText;
 	RectangleShape hpMaxBar;
@@ -32,6 +37,7 @@ private:
 	int waveNum;
 	int spawnTimer;
 	int spawnTimerMax;
+	int enemiesLeft;
 	int score;
 	
 	void initVariables();
@@ -41,7 +47,7 @@ private:
 	void resetGui();
 
 public:
-	GameState(StateData* state_data, int waveNum);
+	GameState(StateData* state_data, std::map<std::string, int> upgradeCur, int waveNum);
 	virtual ~GameState();
 
 	void updateInput(const float& dt);
@@ -49,9 +55,9 @@ public:
 	void updatePlayer(const float& dt);
 	void updateView(const float& dt);
 	void updateCollision(const float& dt);
-	void updateButtons(const float& dt);
+	void updateButtons();
+	void updateGameState(const float& dt);
 	void update(const float& dt);
-	void renderButtons(RenderTarget* target);
 	void render(RenderTarget* target = NULL);
 
 };

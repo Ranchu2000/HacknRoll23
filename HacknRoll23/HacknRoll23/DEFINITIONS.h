@@ -27,6 +27,8 @@
 #define FIRING_FILEPATH "Resources/Res/Redux.png"
 #define BURN_FILEPATH "Resources/Res/Firebase.png"
 #define PIERCE_FILEPATH "Resources/Res/Vue.png"
+#define GAME_BACKGROUND_FILEPATH "Resources/Res/Game Background.png"
+#define PAUSE_ICON_FILEPATH "Resources/Res/Pause.png"
 
 #define NAVY_COLOR 21,0,80
 #define BROWN_COLOR 51,43,40,255
@@ -38,8 +40,12 @@
 #define GREY_COLOR 116,143,152,255
 #define PURPLE_COLOR 63,0,113
 #define PINK_COLOR 251,37.f,118,255
+#define DARK_GREY_COLOR 73,113,116,255
+#define GREEN_COLOR 97,135,110,255
 
 //PLAYER
+#define PLAYER_TEXTURE_SHEET "Resources/Textures/PlayerSheet.png"
+
 #define PLAYER_INITIAL_SPEED 570.f
 #define PLAYER_UPGRADE_SPEED 180.f
 #define PLAYER_INITIAL_DAMAGE 2

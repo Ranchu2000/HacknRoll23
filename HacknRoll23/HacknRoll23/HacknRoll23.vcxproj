@@ -139,6 +139,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="AIFollow.cpp" />
     <ClCompile Include="BurnSkill.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="Enemy.cpp" />
@@ -146,10 +147,17 @@
     <ClCompile Include="GameOverState.cpp" />
     <ClCompile Include="Gui.cpp" />
     <ClCompile Include="IntermissionState.cpp" />
+    <ClCompile Include="LevelsSystem.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="MeleeEnemy.cpp" />
     <ClCompile Include="PiercingSkill.cpp" />
+    <ClCompile Include="Player.cpp" />
+    <ClCompile Include="RangedEnemy.cpp" />
+    <ClCompile Include="PlayerProjectile.cpp" />
+    <ClCompile Include="Projectiles.cpp" />
     <ClCompile Include="SkillList.cpp" />
     <ClCompile Include="MainMenuState.cpp" />
+    <ClCompile Include="Skills.cpp" />
     <ClCompile Include="SplashState.cpp" />
     <ClCompile Include="State.cpp" />
     <ClCompile Include="AnimationComponent.cpp" />
@@ -157,9 +165,11 @@
     <ClCompile Include="Entity.cpp" />
     <ClCompile Include="HitboxComponent.cpp" />
     <ClCompile Include="MovementComponent.cpp" />
+    <ClCompile Include="VectorMath.cpp" />
     <ClCompile Include="VictoryState.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AIFollow.h" />
     <ClInclude Include="BurnSkill.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="DEFINITIONS.h" />
@@ -168,10 +178,16 @@
     <ClInclude Include="GameOverState.h" />
     <ClInclude Include="imports.h" />
     <ClInclude Include="IntermissionState.h" />
+    <ClInclude Include="LevelsSystem.h" />
+    <ClInclude Include="MeleeEnemy.h" />
     <ClInclude Include="PiercingSkill.h" />
+    <ClInclude Include="RangedEnemy.h" />
+    <ClInclude Include="PlayerProjectile.h" />
+    <ClInclude Include="Projectiles.h" />
     <ClInclude Include="SkillList.h" />
     <ClInclude Include="Gui.h" />
     <ClInclude Include="MainMenuState.h" />
+    <ClInclude Include="Skills.h" />
     <ClInclude Include="SplashState.h" />
     <ClInclude Include="State.h" />
     <ClInclude Include="AnimationComponent.h" />
@@ -181,6 +197,7 @@
     <ClInclude Include="MovementComponent.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="Skills.h" />
+    <ClInclude Include="VectorMath.h" />
     <ClInclude Include="VictoryState.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

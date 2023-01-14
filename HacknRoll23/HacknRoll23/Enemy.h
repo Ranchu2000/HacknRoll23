@@ -1,12 +1,12 @@
 #pragma once
 
 #include "imports.h"
+#include "Entity.h"
+#include "Player.h"
 
 class AIFollow;
-class Player;
-class AttributeComponent;
 
-class Enemy
+class Enemy: public Entity
 {
 protected:
 	// Enemy variables
@@ -38,13 +38,12 @@ public:
 	void setTotalBurnDamage(int burnDamage);
 
 	//Functions
-	//virtual void generateAttributes(const unsigned level);
 
 	virtual void loseHP(const int hp, Vector2f projectileDirection, const float& dt);
 	virtual const bool isDead() const;
 	const bool isBurning() const;
 
-	/*virtual const AttributeComponent* getAttributeComp() const;*/
+	virtual const AttributeComponent* getAttributeComp() const;
 
 	virtual void updateAnimation(const float& dt) = 0;
 	void updateBurn();
@@ -52,6 +51,5 @@ public:
 	virtual void update(const float& dt, sf::Vector2f& mouse_pos_view, const sf::View& view) = 0;
 	virtual void render(sf::RenderTarget& target, sf::Shader* shader = NULL, const sf::Vector2f light_position = sf::Vector2f(), const bool show_hitbox = false) = 0;
 
-private:
 };
 
