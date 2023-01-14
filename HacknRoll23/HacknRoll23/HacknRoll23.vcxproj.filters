@@ -65,18 +65,29 @@
     <ClCompile Include="VectorMath.cpp">
       <Filter>Resource Files</Filter>
     </ClCompile>
-    <ClCompile Include="Skills.cpp" />
     <ClCompile Include="RangedEnemy.cpp">
       <Filter>Enemies</Filter>
     </ClCompile>
     <ClCompile Include="LevelsSystem.cpp">
       <Filter>Resource Files</Filter>
     </ClCompile>
-    <ClCompile Include="IntermissionState.cpp" />
-    <ClCompile Include="PlayerProjectile.cpp" />
-    <ClCompile Include="Projectiles.cpp" />
     <ClCompile Include="AIRanged.cpp">
       <Filter>Enemies</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerProjectile.cpp">
+      <Filter>Projectiles</Filter>
+    </ClCompile>
+    <ClCompile Include="Projectiles.cpp">
+      <Filter>Projectiles</Filter>
+    </ClCompile>
+    <ClCompile Include="Skills.cpp">
+      <Filter>Skills</Filter>
+    </ClCompile>
+    <ClCompile Include="IntermissionState.cpp">
+      <Filter>States</Filter>
+    </ClCompile>
+    <ClCompile Include="EnemyProjectile.cpp">
+      <Filter>Projectiles</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -159,12 +170,21 @@
     <ClInclude Include="LevelsSystem.h">
       <Filter>Resource Files</Filter>
     </ClInclude>
-    <ClInclude Include="IntermissionState.h" />
-    <ClInclude Include="PlayerProjectile.h" />
-    <ClInclude Include="Projectiles.h" />
     <ClInclude Include="Skills.h" />
     <ClInclude Include="AIRanged.h">
       <Filter>Enemies</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerProjectile.h">
+      <Filter>Projectiles</Filter>
+    </ClInclude>
+    <ClInclude Include="Projectiles.h">
+      <Filter>Projectiles</Filter>
+    </ClInclude>
+    <ClInclude Include="IntermissionState.h">
+      <Filter>States</Filter>
+    </ClInclude>
+    <ClInclude Include="EnemyProjectile.h">
+      <Filter>Projectiles</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -194,6 +214,9 @@
     </Filter>
     <Filter Include="Resource Files">
       <UniqueIdentifier>{63640ffd-d587-411a-b076-1f0e2f4b74f8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Projectiles">
+      <UniqueIdentifier>{b7b3f589-c2d7-4c20-9c58-fc30eb8e32d8}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
