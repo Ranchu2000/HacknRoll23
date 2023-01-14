@@ -69,8 +69,8 @@ void GameOverState::initGui() //init GUI
 }
 
 
-GameOverState::GameOverState(StateData* state_data)
-	: State(state_data)
+GameOverState::GameOverState(StateData* state_data, int score, int waveNum)
+	: State(state_data), enemies(score), waves(waveNum)
 {
 	this->initVariables();
 	this->initFont();

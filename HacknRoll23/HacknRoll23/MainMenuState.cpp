@@ -1,8 +1,16 @@
 #include "MainMenuState.h"
+#include "GameState.h"
 #include "DEFINITIONS.h"
 
 void MainMenuState::initVariables()
 {
+	this->initialStats["Attack"] = 0;
+	this->initialStats["Health"] = 0;
+	this->initialStats["Speed"] = 0;
+	this->initialStats["Firing"] = 0;
+	this->initialStats["Burn"] = 0;
+	this->initialStats["Pierce"] = 0;
+	this->initialWave = 0;
 }
 
 void MainMenuState::initFont()
@@ -80,7 +88,7 @@ void MainMenuState::updateButtons() //map buttons to functionality
 	if (this->buttons["GAME_STATE"]->isPressed())
 	{
 		//test
-		this->states->push(new GameOverState(this->stateData));
+		this->states->push(new GameState(this->stateData, this->initialStats, 0));
 	}
 
 	if (this->buttons["EXIT_STATE"]->isPressed())

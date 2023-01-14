@@ -34,7 +34,7 @@ private:
 	void initVariables();
 	void initGui();
 public:
-	GameOverState(StateData* state_data);
+	GameOverState(StateData* state_data, int score, int waveNum);
 	~GameOverState();
 
 	//Functions
