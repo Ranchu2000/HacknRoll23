@@ -4,7 +4,7 @@
 
 
 //Constructor and Destructor
-SkillList::SkillList() : burn(2, 10), pierce()
+SkillList::SkillList() :  pierce()//, burn(2, 10)
 {
 
 }
@@ -15,10 +15,10 @@ SkillList::~SkillList()
 }
 
 //accessors 
-Skills& SkillList::getBurnSkill()
-{
-    return this->burn;
-}
+//Skills& SkillList::getBurnSkill()
+//{
+//    //return this->burn;
+//}
 
 Skills& SkillList::getPiercingSkill()
 {
@@ -28,7 +28,7 @@ Skills& SkillList::getPiercingSkill()
 //mutators
 void SkillList::increaseBurnLevel(int levels)
 {
-    this->burn.increaseSkillCount(levels);
+    //this->burn.increaseSkillCount(levels);
 }
 
 void SkillList::increasePierceLevel(int levels)
