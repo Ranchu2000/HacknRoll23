@@ -209,9 +209,9 @@ void IntermissionState::updateButtons() //map buttons to functionality
 	{
 		if (nameBox.second->isPressed() && this->timer > this->coolDown) {
 			this->timer = 0;
-			if (this->upgradePoints > 0 && upgradeCur[nameBox.first] < MAX_UPGRADE_QTY) {
-				--upgradePoints;
-				upgradeCur[nameBox.first] += 1;
+			if (this->upgradePoints > 0 && this->upgradeCur[nameBox.first] < MAX_UPGRADE_QTY) {
+				--this->upgradePoints;
+				this->upgradeCur[nameBox.first] += 1;
 				int position = this->upgradeCur[nameBox.first];
 				int index = this->upgradeIndex[nameBox.first];
 
