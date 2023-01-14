@@ -216,13 +216,6 @@ void GameState::updateEnemies(const float& dt)
 	if (this->spawnTimer < this->spawnTimerMax)
 		this->spawnTimer++;
 
-	if (this->spawnTimer >= this->spawnTimerMax && this->meleeSpawned < this->numMelee[this->waveNum - 1]) //change to total number of enemies spawned per wave
-	{
-		sf::Vector2f randomPos = RandomSpawning(this->player->getCenter().x, this->player->getCenter().y, this->player->getGlobalBounds());
-		this->activeEnemies.push_back(new MeleeEnemy(randomPos.x, randomPos.y, this->meleeTex, *(this->player)));
-		this->spawnTimer = 0;
-		this->meleeSpawned++;
-	}
 
 	if (this->spawnTimer >= this->spawnTimerMax && this->rangedSpawned < this->numRanged[this->waveNum - 1]) //change to total number of enemies spawned per wave
 	{
@@ -230,6 +223,13 @@ void GameState::updateEnemies(const float& dt)
 		this->activeEnemies.push_back(new RangedEnemy(randomPos.x, randomPos.y, this->rangedTex, *(this->player)));
 		this->spawnTimer = 0;
 		this->rangedSpawned++;
+	}
+	if (this->spawnTimer >= this->spawnTimerMax && this->meleeSpawned < this->numMelee[this->waveNum - 1]) //change to total number of enemies spawned per wave
+	{
+		sf::Vector2f randomPos = RandomSpawning(this->player->getCenter().x, this->player->getCenter().y, this->player->getGlobalBounds());
+		this->activeEnemies.push_back(new MeleeEnemy(randomPos.x, randomPos.y, this->meleeTex, *(this->player)));
+		this->spawnTimer = 0;
+		this->meleeSpawned++;
 	}
 
 	for (int i = 0; i < this->activeEnemies.size(); i++)

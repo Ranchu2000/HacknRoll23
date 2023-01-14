@@ -17,7 +17,7 @@ void Enemy::initAnimations() {
 
 Enemy::Enemy(Player& player) {
 	this->initVariables();
-	this->initAnimations();
+	//this->initAnimations();
 }
 
 Enemy::~Enemy() {

@@ -43,7 +43,7 @@ void Entity::createMovement(const float maxVelocity, const float acceleration, c
 	this->movementComponent = new MovementComponent(this->sprite, maxVelocity, acceleration, deceleration);
 }
 
-void Entity::createAnimation(sf::Texture& texture_sheet)
+void Entity::createAnimation(sf::Texture & texture_sheet)
 {
 	this->animationComponent = new AnimationComponent(this->sprite, texture_sheet);
 }
