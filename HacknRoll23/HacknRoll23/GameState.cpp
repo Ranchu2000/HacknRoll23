@@ -32,6 +32,10 @@ GameState::GameState(StateData* state_data, int waveNum) : State(state_data), wa
 	this->initPlayer();
 }
 
+GameState::~GameState()
+{
+}
+
 void GameState::updateInput(const float& dt)
 {
 }

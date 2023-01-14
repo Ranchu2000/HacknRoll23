@@ -13,8 +13,8 @@ protected:
     sf::Sprite skillSprite;
 
 public:
-    Skills(int skillStackCount = 0, int skillDuration = 0.f, float damagePerSecond = 0.f);
-    ~Skills();
+    Skills(int skillStackCount = 0, int skillDuration = 0.f, float damagePerSecond = 0.f) {};
+    ~Skills() {};
 
     //accessors
     const bool getEffectStatus();
@@ -24,7 +24,7 @@ public:
 
 
     //mutators
-    void increaseSkillCount(int levels = 1);
+    void increaseSkillCount(int levels = 1) {};
     void setSkillDuration(float skillDuration); 
     void setDamagePerSecond(float DPS);
 };
