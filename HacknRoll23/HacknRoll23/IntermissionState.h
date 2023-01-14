@@ -11,18 +11,19 @@ class IntermissionState :
 		Font font;
 		RectangleShape background;
 
-		int coolDown;
-
-		int upgradePoints = 2;
-		std::vector<RectangleShape> fillBoxes;//indicate upgraded skills
+		float coolDown=.5f;
+		float timer;
+		int upgradePoints = 0;
+		
 		std::map<std::string, int> upgradeCur; //player's current upgrades
 		std::map<std::string, int> upgradeIndex; //upgrade indexes
 		std::map<std::string, Texture> upgradeTextures;
 		std::map<std::string, Sprite> upgradeSprite;
 		std::map<std::string, Text> upgradeDesc;
 		//UI stuff
+		RectangleShape fillBox;
+		std::vector<RectangleShape> fillBoxes;//indicate upgraded skills
 		std::map<std::string, std::vector<RectangleShape>> upgradeOutline;
-		std::map<std::string, std::vector<RectangleShape>> upgradeIndicator; 
 		std::map<std::string, gui::Button*> upgradeBox; // + box
 
 		Text title;

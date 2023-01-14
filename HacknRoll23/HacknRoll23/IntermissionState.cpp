@@ -3,6 +3,7 @@
 
 void IntermissionState::initVariables()
 {
+	this->timer = 1.f;
 	//initialise upgradeTextures
 	Texture tex; 
 	tex.loadFromFile(ATTACK_FILEPATH);
@@ -43,6 +44,11 @@ void IntermissionState::initVariables()
 	this->upgradeDesc["Burn"] = description;
 	description.setString("Piercing Projectiles");
 	this->upgradeDesc["Pierce"] = description;
+
+	//test
+	/*for (auto& nameText : this->upgradeTextures) {
+		this->upgradeCur[nameText.first]= 1;
+	}*/
 }
 
 void IntermissionState::initFont()
@@ -65,9 +71,9 @@ void IntermissionState::initGui() //init GUI
 	this->title.setStyle(Text::Bold);
 	this->title.setString("Wave Intermission");
 	this->title.setPosition(gui::p2pX(50.0f, vm) - this->title.getGlobalBounds().width / 2, gui::p2pY(5.f, vm));
-	
+
 	//next button
-	this->nextBtn= new gui::Button(
+	this->nextBtn = new gui::Button(
 		gui::p2pX(95.f, vm) - gui::p2pX(15.f, vm), gui::p2pY(95.f, vm) - gui::p2pY(10.f, vm),
 		gui::p2pX(15.f, vm), gui::p2pY(10.f, vm),
 		&this->font, "Next", gui::calcCharSize(vm, 40),
@@ -91,17 +97,70 @@ void IntermissionState::initGui() //init GUI
 		}
 		upgradeSprite[nameTextures.first] = spr;
 
+		RectangleShape outline;
+		outline.setSize(Vector2f(gui::p2pX(5.f, vm), gui::p2pX(5.f, vm)));
+		outline.setFillColor(Color::White);
+		for (int i = 1; i < MAX_UPGRADE_QTY + 1; i++) {
+			if (idx <= 3) {
+				outline.setPosition(gui::p2pX(20.f, vm) + gui::p2pX(5.5f, vm) * i, gui::p2pY(20.5f, vm) + idx * gui::p2pY(18.f, vm));
+			}
+			else {
+				outline.setPosition(gui::p2pX(63.f, vm) + gui::p2pX(5.5f, vm) * i, gui::p2pY(20.5f, vm) + (idx - 3) * gui::p2pY(18.f, vm));
+			}
+			this->upgradeOutline[nameTextures.first].push_back(outline);
+		}
+		//upgrade icon
+		if (idx <= 3) {
+			this->upgradeBox[nameTextures.first] = new gui::Button(
+				gui::p2pX(43.f, vm), gui::p2pY(20.5f, vm) + idx * gui::p2pY(18.f, vm),
+				gui::p2pX(5.f, vm), gui::p2pX(5.f, vm),
+				&this->font, "+", gui::calcCharSize(vm, 35),
+				sf::Color(PINK_COLOR), Color(NAVY_COLOR),
+				sf::Color(PURPLE_COLOR));
+		}
+		else {
+			this->upgradeBox[nameTextures.first] = new gui::Button(
+				gui::p2pX(86.f, vm), gui::p2pY(20.5f, vm) + (idx - 3) * gui::p2pY(18.f, vm),
+				gui::p2pX(5.f, vm), gui::p2pX(5.f, vm),
+				&this->font, "+", gui::calcCharSize(vm, 35),
+				sf::Color(PINK_COLOR), Color(NAVY_COLOR), sf::Color(PURPLE_COLOR));
+		}
+	}
+	//upgraded indicator
+	this->fillBox.setSize(Vector2f(gui::p2pX(4.5f, vm), gui::p2pX(4.5f, vm)));
+	this->fillBox.setFillColor(Color(PINK_COLOR));
+	for (auto& nameIndex : this->upgradeIndex) {
+		if (nameIndex.second <= 3) {
+			for (int k = 1; k <= upgradeCur[nameIndex.first]; k++) {
+				this->fillBox.setPosition(gui::p2pX(20.f, vm) + gui::p2pX(5.5f, vm) * k + gui::p2pX(.25f, vm), gui::p2pY(20.5f, vm) + nameIndex.second * gui::p2pY(18.f, vm) + gui::p2pX(.25f, vm));
+				this->fillBoxes.push_back(this->fillBox);
+			}
+		}
+		else {
+			for (int k = 1; k <= upgradeCur[nameIndex.first]; k++) {
+				this->fillBox.setPosition(gui::p2pX(63.f, vm) + gui::p2pX(5.5f, vm) * k + gui::p2pX(.25f, vm), gui::p2pY(20.5f, vm) + (nameIndex.second - 3) * gui::p2pY(18.f, vm) + gui::p2pX(.25f, vm));
+				this->fillBoxes.push_back(this->fillBox);
+			}
+		}
 	}
 }
 
 void IntermissionState::resetGui() //reset UI
 {
+	delete this->nextBtn;
+	auto it = this->upgradeBox.begin();
+	for (it = this->upgradeBox.begin(); it != this->upgradeBox.end(); ++it)
+	{
+		delete it->second;
+	}
+	this->upgradeBox.clear();
+	this->initGui();
 }
 
 IntermissionState::IntermissionState(StateData* state_data)
 	: State(state_data)
 {
-	this->initFont();//initialise font so initvariable can use
+	this->initFont();//initialise font first so initvariable can use
 	this->initVariables();
 	
 	this->initGui();
@@ -110,6 +169,13 @@ IntermissionState::IntermissionState(StateData* state_data)
 
 IntermissionState::~IntermissionState()
 {
+	delete this->nextBtn;
+	auto it = this->upgradeBox.begin();
+	for (it = this->upgradeBox.begin(); it != this->upgradeBox.end(); ++it)
+	{
+		delete it->second;
+	}
+	this->upgradeBox.clear();
 }
 
 void IntermissionState::updateInput(const float& dt)
@@ -122,15 +188,42 @@ void IntermissionState::updateInput(const float& dt)
 	std::string info = "Points Available: " + std::to_string(this->upgradePoints);
 	this->text.setString(info);
 	this->text.setPosition(gui::p2pX(50.0f, vm) - this->text.getGlobalBounds().width / 2, gui::p2pY(20.f, vm));
+	this->timer += dt;
 }
 
 void IntermissionState::updateButtons() //map buttons to functionality
 {
 	this->nextBtn->update(this->mousePosWindow);
+
 	if (nextBtn->isPressed()) {
 		//start new game state
 		std::cout << "new game" << "\n";
 		this->endState();
+	}
+	const VideoMode& vm = VideoMode(SCREEN_WIDTH, SCREEN_HEIGHT);
+	for (auto& box : this->upgradeBox)
+	{
+		box.second->update(this->mousePosWindow);
+	}
+	for (auto& nameBox : this->upgradeBox)
+	{
+		if (nameBox.second->isPressed() && this->timer > this->coolDown) {
+			this->timer = 0;
+			if (this->upgradePoints > 0 && upgradeCur[nameBox.first] < MAX_UPGRADE_QTY) {
+				--upgradePoints;
+				upgradeCur[nameBox.first] += 1;
+				int position = this->upgradeCur[nameBox.first];
+				int index = this->upgradeIndex[nameBox.first];
+
+				if (index <= 3) {
+					this->fillBox.setPosition(gui::p2pX(20.f, vm) + gui::p2pX(5.5f, vm) * position + gui::p2pX(.25f, vm), gui::p2pY(20.5f, vm) + index * gui::p2pY(18.f, vm) + gui::p2pX(.25f, vm));
+				}
+				else {
+					this->fillBox.setPosition(gui::p2pX(63.f, vm) + gui::p2pX(5.5f, vm) * position + gui::p2pX(.25f, vm), gui::p2pY(20.5f, vm) + (index - 3) * gui::p2pY(18.f, vm) + gui::p2pX(.25f, vm));
+				}
+				this->fillBoxes.push_back(this->fillBox);
+			}
+		}
 	}
 }
 
@@ -140,7 +233,6 @@ void IntermissionState::update(const float& dt)
 	this->updateInput(dt);
 	this->updateButtons();
 }
-
 
 void IntermissionState::render(sf::RenderTarget* target) //draw stuff
 {
@@ -159,11 +251,13 @@ void IntermissionState::render(sf::RenderTarget* target) //draw stuff
 		for (int i = 0;i < outline.second.size(); i++) {
 			target->draw(outline.second[i]);
 		}
-	}for (auto& indicator : this->upgradeIndicator) {
-		for (int i = 0;i < indicator.second.size(); i++) {
-			target->draw(indicator.second[i]);
-		}
 	}
 	this->nextBtn->render(*target);
-
+	for (auto& box : this->upgradeBox)
+	{
+		box.second->render(*target);
+	}
+	for (int i = 0;i < fillBoxes.size(); i++) {
+		target->draw(fillBoxes[i]);
+	}
 }
