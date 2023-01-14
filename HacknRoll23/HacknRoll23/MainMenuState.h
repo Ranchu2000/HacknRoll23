@@ -1,6 +1,8 @@
 #ifndef MAINMENUSTATE_H
 #define MAINMENUSTATE_H
 
+#include "GameOverState.h"
+#include"VictoryState.h"
 #include "imports.h"
 
 class MainMenuState:
