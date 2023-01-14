@@ -1,12 +1,12 @@
-#ifndef GAMEOVERSTATE_H
-#define GAMEOVERSTATE_H
+#ifndef VICTORYSTATE_H
+#define VICTORYSTATE_H
 
 #include "imports.h"
 #include "DEFINITIONS.h"
 #include "MainMenuState.h"
 
 
-class GameOverState :
+class VictoryState :
 	public State
 {
 private:
@@ -14,28 +14,24 @@ private:
 	RectangleShape background;
 
 	Text title;
-	Text challenge;
+	Text prizeInstructions;
 	Text text;
-	
-	Texture lossText;
-	Sprite lossIcon;
 
+	Texture prizeTexture;
+	RectangleShape prize;
 
-	Texture retryText;
-	Sprite retryBtn;
+	Texture wonText;
+	Sprite wonIcon;
 
 	Texture homeText;
 	Sprite homeBtn;
-
-	int waves = 0;
-	int enemies = 0;
 
 	void initFont();
 	void initVariables();
 	void initGui();
 public:
-	GameOverState(StateData* state_data);
-	~GameOverState();
+	VictoryState(StateData* state_data);
+	~VictoryState();
 
 	//Functions
 	void update(const float& dt);
