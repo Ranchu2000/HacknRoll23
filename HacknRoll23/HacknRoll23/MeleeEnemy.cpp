@@ -16,10 +16,7 @@ void MeleeEnemy::initGUI()
 	this->hpBar.setSize(Vector2f(60.f, 10.f));
 };
 
-void MeleeEnemy::initAnimations()
-{
-	//this->createAnimation(texture_sheet)
-};
+void MeleeEnemy::initAnimations() {};
 
 MeleeEnemy::MeleeEnemy(float x, float y, sf::Texture texture_sheet, Player& player)
 	: Enemy(player)
@@ -27,11 +24,12 @@ MeleeEnemy::MeleeEnemy(float x, float y, sf::Texture texture_sheet, Player& play
 	std::srand(time(0));
 	this->initVariables();
 	this->initGUI();
+	this->createAnimation(texture_sheet);
 	this->initAnimations();
-	//this->createHitbox(this->sprite, 0.f, 0.f, 64.f, 64.f);
-	//this->createMovement((rand() % (51)) + 400.f, 500.f, 200.f);
-	//this->createAttribute(1, 5, 1);
-	//this->setPosition(x, y);
+	this->createHitbox(this->sprite, 0.f, 0.f, 64.f, 64.f);
+	this->createMovement((rand() % (51)) + 400.f, 500.f, 200.f);
+	this->createAttribute(1, 5, 1);
+	this->setPosition(x, y);
 
 	this->follow = new AIFollow(player, *this);
 };
@@ -65,7 +63,12 @@ void MeleeEnemy::updateAnimation(const float& dt)
 		this->animationComponent->play("WALK_DOWN", dt, this->movementComponent->getVelocity().y, this->movementComponent->getMaxVelocity());
 	}
 
-	//TODO: Add burning animation logic as well
+	if (this->isBurning())
+	{
+		this->sprite.setColor(sf::Color::Red);
+	}
+	else
+		this->sprite.setColor(sf::Color::White);
 };
 void MeleeEnemy::update(const float& dt, sf::Vector2f& mouse_pos_view, const sf::View& view)
 {
