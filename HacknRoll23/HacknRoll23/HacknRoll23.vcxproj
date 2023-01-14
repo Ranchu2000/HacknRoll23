@@ -139,10 +139,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="BurnSkill.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="Gui.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="PiercingSkill.cpp" />
+    <ClCompile Include="SkillList.cpp" />
     <ClCompile Include="MainMenuState.cpp" />
     <ClCompile Include="SplashState.cpp" />
     <ClCompile Include="State.cpp" />
@@ -153,11 +156,14 @@
     <ClCompile Include="MovementComponent.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="BurnSkill.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="DEFINITIONS.h" />
     <ClInclude Include="Enemy.h" />
+    <ClInclude Include="imports.h" />
+    <ClInclude Include="PiercingSkill.h" />
+    <ClInclude Include="SkillList.h" />
     <ClInclude Include="Gui.h" />
-    <ClInclude Include="test\imports.h" />
     <ClInclude Include="MainMenuState.h" />
     <ClInclude Include="SplashState.h" />
     <ClInclude Include="State.h" />
