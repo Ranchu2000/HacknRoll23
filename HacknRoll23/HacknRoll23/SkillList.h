@@ -8,7 +8,7 @@
 class SkillList
 {
 private:
-    BurnSkill burn;
+    //BurnSkill burn;
     PiercingSkill pierce;
 
 public:
