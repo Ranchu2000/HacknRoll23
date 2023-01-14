@@ -39,6 +39,9 @@
     <ClCompile Include="Enemy.cpp">
       <Filter>Enemies</Filter>
     </ClCompile>
+    <ClCompile Include="State.cpp">
+      <Filter>States</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="imports.h">
@@ -52,6 +55,9 @@
     </ClInclude>
     <ClInclude Include="Enemy.h">
       <Filter>Enemies</Filter>
+    </ClInclude>
+    <ClInclude Include="State.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

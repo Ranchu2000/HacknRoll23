@@ -1,19 +1,19 @@
 #include "Game.h"
-
+#include "DEFINITIONS.h"
 
 void Game::initVariables() {
 	this->window = NULL;
 	this->dt =0.0f;
-	this->gridSize = 50;
-	this->mapSize = 56;
+	this->gridSize = GRIDSIZE;
+	this->mapSize = MAPSIZE;
 }
 
 void Game::initWindow() {
 	ContextSettings settings;
 	settings.antialiasingLevel = 0;
-	this->window = new RenderWindow(VideoMode(1920, 1080), "HacknRoll23", Style::Close);
-	this->window->setFramerateLimit(120);
-	this->window->setVerticalSyncEnabled(false);
+	this->window = new RenderWindow(VideoMode(SCREEN_WIDTH, SCREEN_WIDTH), TITLE, Style::Close);
+	this->window->setFramerateLimit(FRAME_LIMIT);
+	this->window->setVerticalSyncEnabled(VERTICAL_SYNC);
 }
 
 void Game::initStateData() {
@@ -23,6 +23,7 @@ void Game::initStateData() {
 	this->stateData.mapSize = this->mapSize;
 }
 void Game::initState() {
+	//push states one by one
 }
 
 Game::Game() {
