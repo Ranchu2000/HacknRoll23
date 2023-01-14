@@ -157,7 +157,7 @@
     <ClInclude Include="DEFINITIONS.h" />
     <ClInclude Include="Enemy.h" />
     <ClInclude Include="Gui.h" />
-    <ClInclude Include="imports.h" />
+    <ClInclude Include="test\imports.h" />
     <ClInclude Include="MainMenuState.h" />
     <ClInclude Include="SplashState.h" />
     <ClInclude Include="State.h" />
