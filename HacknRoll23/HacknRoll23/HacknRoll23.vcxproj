@@ -142,6 +142,7 @@
     <ClCompile Include="BurnSkill.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="Enemy.cpp" />
+    <ClCompile Include="GameState.cpp" />
     <ClCompile Include="Gui.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="PiercingSkill.cpp" />
@@ -160,6 +161,7 @@
     <ClInclude Include="Game.h" />
     <ClInclude Include="DEFINITIONS.h" />
     <ClInclude Include="Enemy.h" />
+    <ClInclude Include="GameState.h" />
     <ClInclude Include="imports.h" />
     <ClInclude Include="PiercingSkill.h" />
     <ClInclude Include="SkillList.h" />
