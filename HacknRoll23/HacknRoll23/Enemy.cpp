@@ -38,23 +38,36 @@ void Enemy::setTotalBurnDamage(int burnDamage) {
 }
 
 void Enemy::loseHP(const int hp, Vector2f projectileDirection, const float& dt) {
-	// to be implemented once entity class is up
+	if (this->attributeComponent)
+	{
+		this->attributeComponent->loseHP(hp);
+
+		Vector2f initialPosition = this->getPosition();
+
+		for (int i = 0; i < 3; i++) { //knock back from projectile hit
+			this->move(projectileDirection.x * 20.f, projectileDirection.y * 20.f, dt);
+		}
+	}
 }
 
 const bool Enemy::isDead() const {
-	// to be implemented once entity class is up
-	return true;
+	if (this->attributeComponent)
+	{
+		return this->attributeComponent->isDead();
+	}
+
+	return false;
 }
 
 const bool Enemy::isBurning() const {
-	// to be implemented once entity class is up
-	return true;
+	// to be implemented once skiils class up
 }
 
-//const AttributeComponent* Enemy::getAttributeComp() const {
-//	// to be implemented once entity class is up
-//};
+const AttributeComponent* Enemy::getAttributeComp() const {
+	// to be implemented once skills class up
+	return this->attributeComponent;
+};
 
 void Enemy::updateBurn() {
-	// to be implemented once entity class is up
+	// to be implemented once skills class up
 }
