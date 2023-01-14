@@ -78,7 +78,10 @@ void MainMenuState::updateButtons() //map buttons to functionality
 		btn.second->update(this->mousePosWindow);
 
 	if (this->buttons["GAME_STATE"]->isPressed())
-		std::cout << "gamestate" << "\n";//load game state
+	{
+		//test
+		this->states->push(new GameOverState(this->stateData));
+	}
 
 	if (this->buttons["EXIT_STATE"]->isPressed())
 	{

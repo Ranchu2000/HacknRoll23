@@ -141,6 +141,7 @@
   <ItemGroup>
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="Enemy.cpp" />
+    <ClCompile Include="GameOverState.cpp" />
     <ClCompile Include="Gui.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MainMenuState.cpp" />
@@ -156,6 +157,7 @@
     <ClInclude Include="Game.h" />
     <ClInclude Include="DEFINITIONS.h" />
     <ClInclude Include="Enemy.h" />
+    <ClInclude Include="GameOverState.h" />
     <ClInclude Include="Gui.h" />
     <ClInclude Include="test\imports.h" />
     <ClInclude Include="MainMenuState.h" />

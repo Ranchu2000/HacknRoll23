@@ -14,6 +14,10 @@
 #define PIXEL_FONT_FILEPATH "Resources/Font/Pixel.ttf"
 #define LOGO_FILEPATH "Resources/Res/Logo.png"
 #define TITLE_FILEPATH "Resources/Res/Title.png"
+#define RETRY_ICON_FILEPATH "Resources/Res/Retry.png"
+#define HOME_ICON_FILEPATH "Resources/Res/Home.png"
+#define LOSS_ICON_FILEPATH "Resources/Res/Loss.png"
+
 
 
 #define NAVY_COLOR 21,0,80
