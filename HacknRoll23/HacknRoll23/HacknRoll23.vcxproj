@@ -139,6 +139,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+
+    <ClCompile Include="Game.cpp" />
+    <ClCompile Include="Enemy.cpp" />
+    <ClCompile Include="HacknRoll23.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="State.cpp" />
     <ClCompile Include="AnimationComponent.cpp" />
     <ClCompile Include="AttributeComponent.cpp" />
     <ClCompile Include="HacknRoll23.cpp" />
@@ -149,10 +155,14 @@
     <ClCompile Include="Skills.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Game.h" />
+    <ClInclude Include="DEFINITIONS.h" />
+    <ClInclude Include="Enemy.h" />
+    <ClInclude Include="imports.h" />
+    <ClInclude Include="State.h" />
     <ClInclude Include="AnimationComponent.h" />
     <ClInclude Include="AttributeComponent.h" />
     <ClInclude Include="Entity.h" />
-    <ClInclude Include="DEFINITIONS.h" />
     <ClInclude Include="HitboxComponent.h" />
     <ClInclude Include="imports.h" />
     <ClInclude Include="MovementComponent.h" />

@@ -1,13 +1,14 @@
 #ifndef header_H
 #define header_H
 
-//GAME SETTINGS
+//MAP
 #define GRIDSIZE 50
 #define MAPSIZE 56
 #define SCREEN_WIDTH 1920
 #define SCREEN_HEIGHT 1080
 #define TITLE "Jobpocalypse"
 #define FRAME_LIMIT 120
+#define VERTICAL_SYNC false
 
 //PLAYER
 #define PLAYER_INITIAL_SPEED 570.f
