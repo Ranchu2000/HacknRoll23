@@ -17,6 +17,8 @@
 #define RETRY_ICON_FILEPATH "Resources/Res/Retry.png"
 #define HOME_ICON_FILEPATH "Resources/Res/Home.png"
 #define RESUME_ICON_FILEPATH "Resources/Res/ResumeIcon.png"
+#define KEYBOARD_ICON_FILEPATH "Resources/Res/KeyboardIcon.png"
+#define MOUSE_ICON_FILEPATH "Resources/Res/MouseIcon.png"
 #define LOSS_ICON_FILEPATH "Resources/Res/Loss.png"
 #define WON_ICON_FILEPATH "Resources/Res/Won.png"
 #define PRIZE_ICON_FILEPATH "Resources/Res/Prize.png"
