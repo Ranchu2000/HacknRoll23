@@ -35,4 +35,4 @@ The sprites utilised for this game are custom sprites that we created through Li
 - Making the game more enjoyable- small details like pixelarting various movements and knockback
 
 ## How YOU can play our game 
-Click [here] (https://docs.google.com/uc?export=download&id=1pITja3T5CHpVa-QqkkrEyR0kfEFH84cB) to download our game folder and run HacknRoll23.exe found within it! 
+Click [here](https://docs.google.com/uc?export=download&id=1pITja3T5CHpVa-QqkkrEyR0kfEFH84cB) to download our game folder and run HacknRoll23.exe found within it! 
