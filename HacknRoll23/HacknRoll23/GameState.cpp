@@ -215,7 +215,7 @@ void GameState::updateEnemies(const float& dt)
 	if (this->meleeSpawned == 0 && this->rangedSpawned == 0)
 	{
 		this->enemiesLeft = this->numMelee[this->waveNum - 1] + this->numRanged[this->waveNum - 1];
-		if (this->waveNum == 1)
+		if (this->waveNum == 5)
 			this->enemiesLeft++;
 	}
 
