@@ -19,7 +19,7 @@ Throughout this journey, Timmy will realise that the intro to data structures mo
 
 Will Timmy emerge out of this job seeking hell? Or will he fall to the endless sea of rejections?
 
-![](./Resources/Res/Logo.png)
+![](./HacknRoll23/HacknRoll23//Resources/Res/Logo.png)
 
 ## How we built it
 Jobpocalypse was built solely using C++ and SFML (Simple and Fast Multimedia Library), which we used to access various interfaces of our computers to ease game development. 
