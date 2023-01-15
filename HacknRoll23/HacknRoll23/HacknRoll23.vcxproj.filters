@@ -89,10 +89,20 @@
     <ClCompile Include="EnemyProjectile.cpp">
       <Filter>Projectiles</Filter>
     </ClCompile>
-    <ClCompile Include="GameIntro.cpp" />
-    <ClCompile Include="SpawningLogic.cpp" />
     <ClCompile Include="GameSounds.cpp">
       <Filter>Music</Filter>
+    </ClCompile>
+    <ClCompile Include="GameIntro.cpp">
+      <Filter>States</Filter>
+    </ClCompile>
+    <ClCompile Include="PauseState.cpp">
+      <Filter>States</Filter>
+    </ClCompile>
+    <ClCompile Include="RangedBoss.cpp">
+      <Filter>Enemies</Filter>
+    </ClCompile>
+    <ClCompile Include="SpawningLogic.cpp">
+      <Filter>Resource Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -191,11 +201,22 @@
     <ClInclude Include="EnemyProjectile.h">
       <Filter>Projectiles</Filter>
     </ClInclude>
-    <ClInclude Include="GameIntro.h" />
-    <ClInclude Include="SpawningLogic.h" />
     <ClInclude Include="Skills.h" />
     <ClInclude Include="GameSounds.h">
       <Filter>Music</Filter>
+    </ClInclude>
+    <ClInclude Include="Skills.h" />
+    <ClInclude Include="GameIntro.h">
+      <Filter>States</Filter>
+    </ClInclude>
+    <ClInclude Include="PauseState.h">
+      <Filter>States</Filter>
+    </ClInclude>
+    <ClInclude Include="RangedBoss.h">
+      <Filter>Enemies</Filter>
+    </ClInclude>
+    <ClInclude Include="SpawningLogic.h">
+      <Filter>Resource Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

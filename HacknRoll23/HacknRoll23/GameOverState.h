@@ -4,6 +4,8 @@
 #include "imports.h"
 #include "DEFINITIONS.h"
 #include "MainMenuState.h"
+#include "GameSounds.h"
+
 
 
 class GameOverState :
@@ -29,6 +31,8 @@ private:
 
 	int waves = 0;
 	int enemies = 0;
+
+	GameSounds* gamesound;
 
 	void initFont();
 	void initVariables();

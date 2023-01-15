@@ -18,6 +18,8 @@ void GameState::initVariables()
 	this->numMelee = this->levels->getNumMeleeEnemies();
 	this->numRanged = this->levels->getNumRangedEnemies();
 	this->score = 0;
+	this->gamesound = new GameSounds();
+	this->gamesound->gameStateMusic.play();
 	for (int i = 0; i < this->waveNum - 1; i++)
 	{
 		this->score += this->numMelee[i] + this->numRanged[i];
@@ -177,6 +179,7 @@ void GameState::updatePlayerShooting(const float& dt)
 {
 	if (sf::Mouse::isButtonPressed(sf::Mouse::Left) && this->player->getDamageTimer() >= this->player->getDamageInterval())
 	{
+		this->gamesound->shootSound.play();
 		sf::Vector2f playerPos = this->player->getCenter();//world coord
 		sf::Vector2i playerPosView = this->window->mapCoordsToPixel(playerPos, this->view);
 		sf::Vector2f mousePos = this->mousePosView;
@@ -257,6 +260,7 @@ void GameState::updateEnemies(const float& dt)
 
 		if (this->activeEnemies[i]->getGlobalBounds().intersects(this->player->getGlobalBounds()) && this->noDamageTimer >= 500.f)
 		{
+			this->gamesound->playerTakeDamageSound.play();
 			this->player->loseHP(this->activeEnemies[i]->getAttributeComp()->damageMax);
 			this->noDamageTimer = 0;
 		}
@@ -266,6 +270,7 @@ void GameState::updateEnemies(const float& dt)
 
 			if (!this->playerProjectiles[j].isInEntity() && this->activeEnemies[i]->getGlobalBounds().intersects(this->playerProjectiles[j].getSprite().getGlobalBounds()))
 			{
+				this->gamesound->enemyTakeDamageSound.play();
 				this->activeEnemies[i]->loseHP(this->playerProjectiles[j].getDamage(), this->playerProjectiles[j].getNormDir(), dt);
 
 				if (this->playerProjectiles[j].getBurnLevel() > 0)
@@ -400,6 +405,7 @@ void GameState::updateView(const float& dt)
 void GameState::updateButtons()
 {
 	if (gui::isSpriteClicked(this->pauseButton, sf::Mouse::Left, *this->window)) {
+		this->gamesound->gameStateMusic.stop();
 		this->states->push(new PauseState(this->stateData));
 	}
 }
@@ -408,16 +414,19 @@ void GameState::updateGameState(const float& dt)
 {
 	if (this->player->getAttributeComponent()->getCurHealth() <= 0)
 	{
+		this->gamesound->gameStateMusic.stop();
 		this->states->push(new GameOverState(this->stateData, this->score, this->waveNum));
 		this->endState();
 	}
 	if (this->enemiesLeft == 0 && this->waveNum != 5 && this->waveNum != 0)
 	{
+		this->gamesound->gameStateMusic.stop();
 		this->states->push(new IntermissionState(this->stateData, this->upgradeCur, this->waveNum));
 		this->endState();
 	}
 	if (this->enemiesLeft == 0 && this->waveNum == 5)
 	{
+		this->gamesound->gameStateMusic.stop();
 		this->states->push(new VictoryState(this->stateData));
 		this->endState();
 	}
