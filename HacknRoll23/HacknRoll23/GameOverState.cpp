@@ -1,7 +1,10 @@
 #include "GameOverState.h"
 
 void GameOverState::initVariables()
-{}
+{
+	this->gamesound = new GameSounds();
+	this->gamesound->gameOverMusic.play();
+}
 
 void GameOverState::initFont()
 {
@@ -86,11 +89,13 @@ void GameOverState::updateInput(const float& dt)
 	if (gui::isSpriteClicked(this->retryBtn, sf::Mouse::Left, *this->window)) {
 		std::cout << "New Game" << std::endl;
 		//GameState
+		this->gamesound->gameOverMusic.stop();
 		this->endState();
 	}
 
 	if (gui::isSpriteClicked(this->homeBtn, sf::Mouse::Left, *this->window)) {
 		std::cout << "Return to Main Menu" << std::endl;
+		this->gamesound->gameOverMusic.stop();
 		this->states->push(new MainMenuState(this->stateData));
 		this->endState();
 	}

@@ -4,6 +4,7 @@
 #include "imports.h"
 #include "DEFINITIONS.h"
 #include "MainMenuState.h"
+#include "GameSounds.h"
 
 
 class VictoryState :
@@ -25,6 +26,8 @@ private:
 
 	Texture homeText;
 	Sprite homeBtn;
+
+	GameSounds* gamesounds;
 
 	void initFont();
 	void initVariables();

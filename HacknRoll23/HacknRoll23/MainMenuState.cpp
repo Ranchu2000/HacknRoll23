@@ -11,6 +11,8 @@ void MainMenuState::initVariables()
 	this->initialStats["Burn"] = 0;
 	this->initialStats["Pierce"] = 0;
 	this->initialWave = 0;
+	this->gamesound = new GameSounds();
+	this->gamesound->startGameMusic.play();
 }
 
 void MainMenuState::initFont()
@@ -88,6 +90,7 @@ void MainMenuState::updateButtons() //map buttons to functionality
 	if (this->buttons["GAME_STATE"]->isPressed())
 	{
 		//test
+		this->gamesound->startGameMusic.stop();
 		this->states->push(new GameState(this->stateData, this->initialStats, 0));
 	}
 
@@ -95,6 +98,7 @@ void MainMenuState::updateButtons() //map buttons to functionality
 	{
 		//test
 		//this->states->push(new IntermissionState(this->stateData));
+		this->gamesound->startGameMusic.stop();
 		this->window->close();
 		this->endState();// ensure everything ends
 	}

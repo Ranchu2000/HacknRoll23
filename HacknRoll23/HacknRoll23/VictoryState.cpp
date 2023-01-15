@@ -1,7 +1,10 @@
 #include "VictoryState.h"
 
 void VictoryState::initVariables()
-{}
+{
+	this->gamesounds = new GameSounds();
+	this->gamesounds->VictoryMusic.play();
+}
 
 void VictoryState::initFont()
 {
@@ -82,6 +85,7 @@ void VictoryState::updateInput(const float& dt)
 {
 	if (gui::isSpriteClicked(this->homeBtn, sf::Mouse::Left, *this->window)) {
 		std::cout << "Return to Main Menu" << std::endl;
+		this->gamesounds->VictoryMusic.play();
 		this->states->push(new MainMenuState(this->stateData));
 		this->endState();
 	}
