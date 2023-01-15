@@ -8,6 +8,7 @@
 #include "RangedBoss.h"
 #include "PlayerProjectile.h"
 #include "EnemyProjectile.h"
+#include "BossProjectile.h"
 #include "LevelsSystem.h"
 #include "PauseState.h"
 
@@ -62,6 +63,7 @@ private:
 	std::vector<PlayerProjectile> playerProjectiles;
 	sf::Texture enemyProjectileTex;
 	std::vector<EnemyProjectile> enemyProjectiles;
+	std::vector<BossProjectile> bossProjectiles;
 
 	void initVariables();
 	void initFonts();

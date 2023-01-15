@@ -215,14 +215,14 @@ void GameState::updateEnemies(const float& dt)
 	if (this->meleeSpawned == 0 && this->rangedSpawned == 0)
 	{
 		this->enemiesLeft = this->numMelee[this->waveNum - 1] + this->numRanged[this->waveNum - 1];
-		if (this->waveNum == 5)
+		if (this->waveNum == 1)
 			this->enemiesLeft++;
 	}
 
 	if (this->spawnTimer < this->spawnTimerMax)
 		this->spawnTimer++;
 
-	if (this->waveNum == 5 && this->enemiesLeft == 1 && this->bossSpawned == 0)
+	if (this->waveNum == 1 && this->enemiesLeft == 1 && this->bossSpawned == 0)
 	{
 		sf::Vector2f randomPos = RandomSpawning(this->player->getCenter().x, this->player->getCenter().y, this->player->getGlobalBounds());
 		this->activeEnemies.push_back(new RangedBoss(randomPos.x, randomPos.y, this->rangedTex, *(this->player)));
@@ -319,6 +319,20 @@ void GameState::updateEnemies(const float& dt)
 			break;
 		}
 	}
+	// Boss proj
+	for (int j = 0; j < this->bossProjectiles.size(); j++)
+	{
+		if (this->player->getGlobalBounds().intersects(this->bossProjectiles[j].getSprite().getGlobalBounds()))
+		{
+			this->player->loseHP(this->bossProjectiles[j].getDamage());
+			//this->playerProjectiles[j].
+			if (this->bossProjectiles[j].reduceHealth() == 0)
+			{
+				this->bossProjectiles.erase(this->bossProjectiles.begin() + j);
+			}
+			break;
+		}
+	}
 }
 
 void GameState::updateEnemyShooting(const float& dt)
@@ -337,9 +351,8 @@ void GameState::updateEnemyShooting(const float& dt)
 
 					int damage = rb->getAttributeComp()->damageMax;
 
-					EnemyProjectile* newProj = new EnemyProjectile(rb->getPosition(), normDir, damage, 1, this->enemyProjectileTex);
-
-					this->enemyProjectiles.push_back(*newProj);
+					BossProjectile* newProj = new BossProjectile(rb->getPosition(), normDir, damage, 1, this->enemyProjectileTex);
+					this->bossProjectiles.push_back(*newProj);
 
 					rb->resetDamageTimer();
 					rb->clock.restart();
@@ -372,6 +385,10 @@ void GameState::updateEnemyShooting(const float& dt)
 	}
 
 	for (auto& tempProjectile : this->enemyProjectiles)
+	{
+		tempProjectile.move(dt);
+	}
+	for (auto& tempProjectile : this->bossProjectiles)
 	{
 		tempProjectile.move(dt);
 	}
@@ -456,6 +473,10 @@ void GameState::render(RenderTarget* target)
 		tempProjectile.render(*target);
 	}
 	for (auto& tempProjectile : this->enemyProjectiles)
+	{
+		tempProjectile.render(*target);
+	}
+	for (auto& tempProjectile : this->bossProjectiles)
 	{
 		tempProjectile.render(*target);
 	}

@@ -29,6 +29,7 @@ private:
 
 	int waves = 0;
 	int enemies = 0;
+	std::map<std::string, int> initialStats;
 
 	void initFont();
 	void initVariables();

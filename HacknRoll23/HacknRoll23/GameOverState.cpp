@@ -1,7 +1,14 @@
 #include "GameOverState.h"
 
 void GameOverState::initVariables()
-{}
+{
+	this->initialStats["Attack"] = 0;
+	this->initialStats["Health"] = 0;
+	this->initialStats["Speed"] = 0;
+	this->initialStats["Firing"] = 0;
+	this->initialStats["Burn"] = 0;
+	this->initialStats["Pierce"] = 0;
+}
 
 void GameOverState::initFont()
 {
@@ -85,6 +92,7 @@ void GameOverState::updateInput(const float& dt)
 {
 	if (gui::isSpriteClicked(this->retryBtn, sf::Mouse::Left, *this->window)) {
 		std::cout << "New Game" << std::endl;
+		this->states->push(new GameState(this->stateData, this->initialStats, 0));
 		//GameState
 		this->endState();
 	}
