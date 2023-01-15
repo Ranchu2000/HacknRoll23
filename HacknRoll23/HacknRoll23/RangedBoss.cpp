@@ -101,7 +101,7 @@ void RangedBoss::update(const float& dt, sf::Vector2f& mouse_pos_view, const sf:
 
 
 	this->hpBar.setSize(Vector2f(10.f * this->attributeComponent->getCurHealth(), 10.f));
-	this->hpBar.setPosition(Vector2f(this->sprite.getPosition().x + 32.f - this->hpBar.getGlobalBounds().width / 2, this->sprite.getPosition().y));
+	this->hpBar.setPosition(Vector2f(this->sprite.getPosition().x + 80.f - this->hpBar.getGlobalBounds().width / 2, this->sprite.getPosition().y));
 
 	this->updateAnimation(dt);
 
