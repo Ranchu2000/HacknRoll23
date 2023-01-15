@@ -23,10 +23,13 @@ private:
 
 	Text how2play;
 	Text how2playInstructions;
+	Text how2win;
+	Text how2winInstruction;
+
 	Texture mouseIconTexture;
 	Sprite mouseIcon;
 	Texture keyboardIconTexture;
-	Sprite keybaordIcon;
+	Sprite keyboardIcon;
 
 	std::map<std::string, gui::Button*> buttons;
 	RectangleShape btnBG1;
