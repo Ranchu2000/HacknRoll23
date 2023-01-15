@@ -24,8 +24,7 @@ Will Timmy emerge out of this job seeking hell? Or will he fall to the endless s
 ## How we built it
 Jobpocalypse was built solely using C++ and SFML (Simple and Fast Multimedia Library), which we used to access various interfaces of our computers to ease game development. 
 
-The sprites utilised for this game are custom sprites that we created through LibreSprite and [INSERT MAPMAKER NAME].  + player sprite 
-
+The sprites utilised for this game are custom sprites that we created through LibreSprite and DeepNight.  
 
 ## Challenges we've faced
 - Fully utilising the capabiliites of C++ as this is the first time the team developed a C++ project of this scale
