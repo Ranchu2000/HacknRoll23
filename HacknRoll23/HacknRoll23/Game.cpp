@@ -26,6 +26,7 @@ void Game::initState() {
 	//push states one by one
 	this->states.push(new MainMenuState(&this->stateData));
 	this->states.push(new GameIntro(&this->stateData));
+	this->states.push(new ChallengeState(&this->stateData));
 	this->states.push(new SplashState(&this->stateData));
 }
 

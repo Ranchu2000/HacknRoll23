@@ -142,6 +142,7 @@
     <ClCompile Include="AIFollow.cpp" />
     <ClCompile Include="AIRanged.cpp" />
     <ClCompile Include="BurnSkill.cpp" />
+    <ClCompile Include="ChallengeState.cpp" />
     <ClCompile Include="EnemyProjectile.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="Enemy.cpp" />
@@ -178,6 +179,7 @@
     <ClInclude Include="AIFollow.h" />
     <ClInclude Include="AIRanged.h" />
     <ClInclude Include="BurnSkill.h" />
+    <ClInclude Include="ChallengeState.h" />
     <ClInclude Include="EnemyProjectile.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="DEFINITIONS.h" />
