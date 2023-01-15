@@ -68,6 +68,7 @@
 //ENEMY
 #define MELEE_ENEMY_TEXTURE_SHEET "Resources/Textures/MeleeEnemy.png"
 #define RANGED_ENEMY_TEXTURE_SHEET "Resources/Textures/RangedEnemyComplete.png"
+#define BOSS_ENEMY_TEXTURE_SHEET "Resources/Textures/Boss.png"
 #define ENEMY_PROJECTILE "Resources/Textures/ThumbsDown.png"
 
 //MUSIC

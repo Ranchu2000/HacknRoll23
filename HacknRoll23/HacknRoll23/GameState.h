@@ -58,6 +58,7 @@ private:
 	std::vector<Enemy*> activeEnemies;
 	sf::Texture meleeTex;
 	sf::Texture rangedTex;
+	sf::Texture bossTex;
 
 	//Projectiles 
 	sf::Texture playerProjectileTex;

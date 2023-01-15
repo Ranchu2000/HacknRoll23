@@ -61,14 +61,8 @@ void RangedBoss::updateAnimation(const float& dt)
 {
 	if (this->isAttacking)
 	{
-		if (this->follow->getCardinalDirection() == EAST)
-			this->animationComponent->play("ATTACK_RIGHT", dt);
-		else if (this->follow->getCardinalDirection() == WEST)
-			this->animationComponent->play("ATTACK_LEFT", dt);
-		else if (this->follow->getCardinalDirection() == NORTH)
-			this->animationComponent->play("ATTACK_UP", dt);
-		else if (this->follow->getCardinalDirection() == SOUTH)
-			this->animationComponent->play("ATTACK_DOWN", dt);
+		this->animationComponent->play("IDLE", dt);
+
 	}
 	else if (this->movementComponent->getState(IDLE))
 	{

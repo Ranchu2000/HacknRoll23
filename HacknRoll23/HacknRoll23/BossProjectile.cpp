@@ -9,7 +9,7 @@ BossProjectile::~BossProjectile() {}
 
 void BossProjectile::move(const float& dt)
 {
-	this->sprite.setScale(2.f, 2.f);
+	this->sprite.setScale(1.5f, 1.5f);
 	this->sprite.setOrigin(this->sprite.getGlobalBounds().width / 2, this->sprite.getGlobalBounds().height / 2);
 	this->sprite.move(this->velocity * dt);
 }
