@@ -1,11 +1,12 @@
 #ifndef GAME_H
 #define GAME_H
+
 #include "imports.h"
 #include "State.h"
 #include "MainMenuState.h"
 #include "SplashState.h"
 #include "GameIntro.h"
-
+#include "ChallengeState.h"
 class Game
 {
 public:
