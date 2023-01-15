@@ -399,10 +399,9 @@ void GameState::updateView(const float& dt)
 
 void GameState::updateButtons()
 {
-	/*if (gui::isSpriteClicked(this->pauseButton, sf::Mouse::Left, *this->window)) {
-		this->gamesounds->gameStateMusic.stop();
+	if (gui::isSpriteClicked(this->pauseButton, sf::Mouse::Left, *this->window)) {
 		this->states->push(new PauseState(this->stateData));
-	}*/
+	}
 }
 
 void GameState::updateGameState(const float& dt)

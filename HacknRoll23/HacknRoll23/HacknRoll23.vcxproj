@@ -153,6 +153,7 @@
     <ClCompile Include="LevelsSystem.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MeleeEnemy.cpp" />
+    <ClCompile Include="PauseState.cpp" />
     <ClCompile Include="PiercingSkill.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="RangedBoss.cpp" />
@@ -188,6 +189,7 @@
     <ClInclude Include="IntermissionState.h" />
     <ClInclude Include="LevelsSystem.h" />
     <ClInclude Include="MeleeEnemy.h" />
+    <ClInclude Include="PauseState.h" />
     <ClInclude Include="PiercingSkill.h" />
     <ClInclude Include="RangedBoss.h" />
     <ClInclude Include="RangedEnemy.h" />
