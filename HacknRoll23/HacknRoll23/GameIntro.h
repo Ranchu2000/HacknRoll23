@@ -8,6 +8,7 @@ class GameIntro :
 {
 private:
 	RectangleShape background;
+	RectangleShape border;
 	Font font;
 	Text title;
 
@@ -15,11 +16,20 @@ private:
 	Text enemyText;
 	Text playerText;
 
-	Texture enemyTexture;
-	Sprite enemy;
+	Texture enemyMeleeTexture;
+	Sprite enemyMelee;
+
+	Texture enemyRangedTexture;
+	Sprite enemyRanged;
+
+	Texture enemyProjTexture;
+	Sprite enemyProj;
 
 	Texture playerTexture;
 	Sprite player;
+
+	Texture playerProjTexture;
+	Sprite playerProj;
 
 
 

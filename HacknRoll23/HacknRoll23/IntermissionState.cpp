@@ -158,11 +158,10 @@ void IntermissionState::resetGui() //reset UI
 }
 
 IntermissionState::IntermissionState(StateData* state_data, std::map<std::string, int> upgradeCur, int waveNum)
-	: State(state_data), upgradeCur(upgradeCur), waveNum(waveNum)
+	: State(state_data), upgradeCur(upgradeCur), upgradePoints(waveNum), waveNum(waveNum)
 {
 	this->initFont();//initialise font first so initvariable can use
 	this->initVariables();
-	
 	this->initGui();
 	this->resetGui();
 }
@@ -197,7 +196,8 @@ void IntermissionState::updateButtons() //map buttons to functionality
 
 	if (nextBtn->isPressed()) {
 		//start new game state
-		std::cout << "new game" << "\n";
+		//std::cout << "new game" << "\n";
+		this->states->push(new GameState(this->stateData, this->upgradeCur, this->waveNum));
 		this->endState();
 	}
 	const VideoMode& vm = VideoMode(SCREEN_WIDTH, SCREEN_HEIGHT);

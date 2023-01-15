@@ -22,6 +22,18 @@ void GameIntro::initGui()
 		)
 	);
 	this->background.setFillColor(Color::Black);
+
+	this->border.setSize(
+		sf::Vector2f
+		(
+			static_cast<float>(vm.width*0.005f),
+			static_cast<float>(vm.height*0.83f)
+		)
+	);
+	this->border.setFillColor(Color(RED_COLOR));
+	this->border.setPosition(gui::p2pX(50.0f, vm), gui::p2pY(15.0f, vm));
+
+
 	
 	this->title.setFont(this->font);
 	this->title.setCharacterSize(gui::calcCharSize(vm, 30));
@@ -122,6 +134,7 @@ void GameIntro::render(sf::RenderTarget* target)
 		target = this->window;
 	target->draw(this->background);
 	target->draw(this->title);
+	target->draw(this->border);
 	target->draw(gamePlayText);
 	target->draw(enemyText);
 	target->draw(gamePlayText);
@@ -131,7 +144,7 @@ void GameIntro::render(sf::RenderTarget* target)
 	target->draw(enemyRanged);
 	target->draw(enemyProj);
 	target->draw(player);
-	target->draw(playplayerProjer);
+	target->draw(playerProj);
 	
 	this->nextBtn->render(*target);
 }
