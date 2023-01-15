@@ -3,6 +3,7 @@
 
 #include "imports.h"
 #include "DEFINITIONS.h"
+#include "GameState.h"
 
 class IntermissionState :
 		public State
@@ -11,6 +12,7 @@ class IntermissionState :
 		Font font;
 		RectangleShape background;
 
+		int waveNum;
 		float coolDown=.5f;
 		float timer;
 		int upgradePoints = 0;
@@ -32,7 +34,6 @@ class IntermissionState :
 		gui::Button* nextBtn;
 		RectangleShape btnBG;
 
-		int waveNum;
 		void initFont();
 		void initVariables();
 		void initGui();
