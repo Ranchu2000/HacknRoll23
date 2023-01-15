@@ -39,7 +39,7 @@ RangedBoss::RangedBoss(float x, float y, sf::Texture& texture_sheet, Player& pla
 	this->initVariables();
 	this->initGUI();
 	this->createAnimation(texture_sheet);
-	this->createHitbox(this->sprite, 160.f, 0.f, 160.f, 160.f);
+	this->createHitbox(this->sprite, 80.f, 0.f, 160.f, 160.f);
 	this->createMovement(250.f, 1000.f, 400.f);
 	this->createAttribute(1, 50, 5);
 
