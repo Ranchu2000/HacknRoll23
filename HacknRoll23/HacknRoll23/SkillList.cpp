@@ -28,7 +28,7 @@ Skills& SkillList::getPiercingSkill()
 //mutators
 void SkillList::increaseBurnLevel(int levels)
 {
-    //this->burn.increaseSkillCount(levels);
+    this->burn.increaseSkillCount(levels);
 }
 
 void SkillList::increasePierceLevel(int levels)
