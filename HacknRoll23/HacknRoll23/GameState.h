@@ -5,6 +5,7 @@
 #include "Player.h"
 #include "MeleeEnemy.h"
 #include "RangedEnemy.h"
+#include "RangedBoss.h"
 #include "PlayerProjectile.h"
 #include "EnemyProjectile.h"
 #include "LevelsSystem.h"
@@ -50,6 +51,7 @@ private:
 	std::vector<int> numRanged;
 	int meleeSpawned;
 	int rangedSpawned;
+	int bossSpawned;
 	std::vector<Enemy*> activeEnemies;
 	sf::Texture meleeTex;
 	sf::Texture rangedTex;
