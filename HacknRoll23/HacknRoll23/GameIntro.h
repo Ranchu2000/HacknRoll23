@@ -15,6 +15,8 @@ private:
 	Text gamePlayText;
 	Text enemyText;
 	Text playerText;
+	Text meleeEnemyText;
+	Text rangedEnemyText;
 
 	Texture enemyMeleeTexture;
 	Sprite enemyMelee;

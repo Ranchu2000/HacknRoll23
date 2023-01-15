@@ -20,6 +20,13 @@
 #define WON_ICON_FILEPATH "Resources/Res/Won.png"
 #define PRIZE_ICON_FILEPATH "Resources/Res/Prize.png"
 
+#define MELEE_ENEMY_FILEPATH "Resources/Res/MeleeEnemy.png"
+#define MELEE_ENEMY_FILEPATH "Resources/Res/MeleeEnemy.png"
+#define RANGED_ENEMY_FILEPATH "Resources/Res/RangedEnemy.png"
+#define ENEMY_PROJ_FILEPATH "Resources/Res/ThumbsDown.png"
+#define PLAYER_PROJ_FILEPATH "Resources/Res/Resume.png"
+#define PLAYER_FILEPATH "Resources/Res/Player.png"
+
 //intermission State
 #define ATTACK_FILEPATH "Resources/Res/Angular.png"
 #define HEALTH_FILEPATH "Resources/Res/Postgresql.png"
