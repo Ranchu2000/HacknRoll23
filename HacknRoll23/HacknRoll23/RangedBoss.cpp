@@ -39,7 +39,7 @@ RangedBoss::RangedBoss(float x, float y, sf::Texture& texture_sheet, Player& pla
 	this->initVariables();
 	this->initGUI();
 	this->createAnimation(texture_sheet);
-	this->createHitbox(this->sprite, 0.f, 0.f, 128.f, 128.f);
+	this->createHitbox(this->sprite, 160.f, 0.f, 160.f, 160.f);
 	this->createMovement(250.f, 1000.f, 400.f);
 	this->createAttribute(1, 50, 5);
 
@@ -90,7 +90,7 @@ void RangedBoss::updateAnimation(const float& dt)
 	{
 		this->animationComponent->play("WALK_DOWN", dt, this->movementComponent->getVelocity().y, this->movementComponent->getMaxVelocity());
 	}
-
+	this->sprite.setScale(2.5f, 2.5f);
 	if (this->isBurning())
 	{
 		this->sprite.setColor(sf::Color::Red);

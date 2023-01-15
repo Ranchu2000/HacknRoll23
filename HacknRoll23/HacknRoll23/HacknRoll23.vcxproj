@@ -141,6 +141,7 @@
   <ItemGroup>
     <ClCompile Include="AIFollow.cpp" />
     <ClCompile Include="AIRanged.cpp" />
+    <ClCompile Include="BossProjectile.cpp" />
     <ClCompile Include="BurnSkill.cpp" />
     <ClCompile Include="EnemyProjectile.cpp" />
     <ClCompile Include="Game.cpp" />
@@ -178,6 +179,7 @@
   <ItemGroup>
     <ClInclude Include="AIFollow.h" />
     <ClInclude Include="AIRanged.h" />
+    <ClInclude Include="BossProjectile.h" />
     <ClInclude Include="BurnSkill.h" />
     <ClInclude Include="EnemyProjectile.h" />
     <ClInclude Include="Game.h" />
