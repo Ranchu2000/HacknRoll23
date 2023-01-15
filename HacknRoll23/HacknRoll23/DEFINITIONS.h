@@ -76,7 +76,7 @@
 #define GAME_STATE_MUSIC "Resources/assets/GameStateMusic.ogg"
 #define VICTORY_MUSIC "Resources/assets/VictoryMusic.ogg"
 
-#define ENEMY_TAKE_DMG_SOUND "Resources/assets/EnemyHitSound.wav"
+#define ENEMY_TAKE_DMG_SOUND "Resources/assets/EnemyHitSound.ogg"
 #define PLAYER_TAKE_DMG_SOUND "Resources/assets/TakeDamageSound.ogg"
 #define SHOOT_SOUND "Resources/assets/ShootSound.ogg"
 

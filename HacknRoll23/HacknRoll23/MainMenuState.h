@@ -5,6 +5,8 @@
 #include"VictoryState.h"
 #include "imports.h"
 #include "IntermissionState.h"
+#include "GameSounds.h"
+
 
 class MainMenuState:
 	public State
@@ -32,6 +34,8 @@ private:
 
 	std::map<std::string, int> initialStats;
 	int initialWave;
+
+	GameSounds* gamesound;
 
 	void initVariables();
 	void initFont();

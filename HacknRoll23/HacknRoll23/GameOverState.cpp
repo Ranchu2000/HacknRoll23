@@ -8,6 +8,8 @@ void GameOverState::initVariables()
 	this->initialStats["Firing"] = 0;
 	this->initialStats["Burn"] = 0;
 	this->initialStats["Pierce"] = 0;
+	this->gamesound = new GameSounds();
+	this->gamesound->gameOverMusic.play();
 }
 
 void GameOverState::initFont()
@@ -94,11 +96,13 @@ void GameOverState::updateInput(const float& dt)
 		std::cout << "New Game" << std::endl;
 		this->states->push(new GameState(this->stateData, this->initialStats, 0));
 		//GameState
+		this->gamesound->gameOverMusic.stop();
 		this->endState();
 	}
 
 	if (gui::isSpriteClicked(this->homeBtn, sf::Mouse::Left, *this->window)) {
 		std::cout << "Return to Main Menu" << std::endl;
+		this->gamesound->gameOverMusic.stop();
 		this->states->push(new MainMenuState(this->stateData));
 		this->endState();
 	}

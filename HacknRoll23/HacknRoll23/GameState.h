@@ -11,6 +11,7 @@
 #include "BossProjectile.h"
 #include "LevelsSystem.h"
 #include "PauseState.h"
+#include "GameSounds.h"
 
 class GameState : public State
 {
@@ -65,6 +66,8 @@ private:
 	std::vector<EnemyProjectile> enemyProjectiles;
 	std::vector<BossProjectile> bossProjectiles;
 
+	GameSounds* gamesound;
+
 	void initVariables();
 	void initFonts();
 	void initPlayer();
@@ -88,5 +91,6 @@ public:
 	void update(const float& dt);
 	void render(RenderTarget* target = NULL);//draw stuff
 
+	friend class PauseState;
 };
 #endif
