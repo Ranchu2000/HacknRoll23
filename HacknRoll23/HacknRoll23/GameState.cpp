@@ -219,14 +219,14 @@ void GameState::updateEnemies(const float& dt)
 	if (this->meleeSpawned == 0 && this->rangedSpawned == 0)
 	{
 		this->enemiesLeft = this->numMelee[this->waveNum - 1] + this->numRanged[this->waveNum - 1];
-		if (this->waveNum == 1)
+		if (this->waveNum == 5)
 			this->enemiesLeft++;
 	}
 
 	if (this->spawnTimer < this->spawnTimerMax)
 		this->spawnTimer++;
 
-	if (this->waveNum == 1 && this->enemiesLeft == 1 && this->bossSpawned == 0)
+	if (this->waveNum == 5 && this->enemiesLeft == 1 && this->bossSpawned == 0)
 	{
 		sf::Vector2f randomPos = RandomSpawning(this->player->getCenter().x, this->player->getCenter().y, this->player->getGlobalBounds());
 		this->activeEnemies.push_back(new RangedBoss(randomPos.x, randomPos.y, this->bossTex, *(this->player)));
