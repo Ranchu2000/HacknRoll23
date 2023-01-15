@@ -194,7 +194,7 @@ void IntermissionState::updateButtons() //map buttons to functionality
 {
 	this->nextBtn->update(this->mousePosWindow);
 
-	if (nextBtn->isPressed()) {
+	if (nextBtn->isPressed() && this->upgradePoints == 0) {
 		//start new game state
 		//std::cout << "new game" << "\n";
 		this->states->push(new GameState(this->stateData, this->upgradeCur, this->waveNum));
