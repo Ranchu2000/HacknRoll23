@@ -102,6 +102,21 @@ void MainMenuState::updateButtons() //map buttons to functionality
 		this->window->close();
 		this->endState();// ensure everything ends
 	}
+	//if (Keyboard::isKeyPressed(Keyboard::W))
+	//{
+	//	this->gamesound->startGameMusic.stop();
+	//	this->states->push(new VictoryState(this->stateData));
+	//}
+	//if (Keyboard::isKeyPressed(Keyboard::L))
+	//{
+	//	this->gamesound->startGameMusic.stop();
+	//	this->states->push(new GameOverState(this->stateData, 0, 0));
+	//}
+	//if (Keyboard::isKeyPressed(Keyboard::I))
+	//{
+	//	this->gamesound->startGameMusic.stop();
+	//	this->states->push(new IntermissionState(this->stateData, this->initialStats, 4)); //this->initialWave
+	//}
 }
 
 void MainMenuState::update(const float& dt)

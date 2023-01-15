@@ -85,7 +85,7 @@ void VictoryState::updateInput(const float& dt)
 {
 	if (gui::isSpriteClicked(this->homeBtn, sf::Mouse::Left, *this->window)) {
 		std::cout << "Return to Main Menu" << std::endl;
-		this->gamesounds->VictoryMusic.play();
+		this->gamesounds->VictoryMusic.stop();
 		this->states->push(new MainMenuState(this->stateData));
 		this->endState();
 	}
