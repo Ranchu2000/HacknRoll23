@@ -222,9 +222,10 @@ void GameState::updateEnemies(const float& dt)
 	if (this->spawnTimer < this->spawnTimerMax)
 		this->spawnTimer++;
 
-	if (this->waveNum == 1 && this->enemiesLeft == 1 && this->bossSpawned == 0)
+	if (this->waveNum == 5 && this->enemiesLeft == 1 && this->bossSpawned == 0)
 	{
-		this->activeEnemies.push_back(new RangedBoss(this->mapSize * this->gridSize / 2, this->mapSize * this->gridSize / 2, this->rangedTex, *(this->player)));
+		sf::Vector2f randomPos = RandomSpawning(this->player->getCenter().x, this->player->getCenter().y, this->player->getGlobalBounds());
+		this->activeEnemies.push_back(new RangedBoss(randomPos.x, randomPos.y, this->rangedTex, *(this->player)));
 		this->bossSpawned = 1;
 		this->spawnTimer = 0;
 	}
