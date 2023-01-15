@@ -109,7 +109,8 @@ void GameState::initEnemies()
 
 	if (!this->rangedTex.loadFromFile(RANGED_ENEMY_TEXTURE_SHEET))
 		throw("ERROR: Failed to load Player texture");
-
+	if (!this->bossTex.loadFromFile(BOSS_ENEMY_TEXTURE_SHEET))
+		throw("ERROR: Failed to load Player texture");
 }
 
 void GameState::initProjectile()
@@ -228,7 +229,7 @@ void GameState::updateEnemies(const float& dt)
 	if (this->waveNum == 1 && this->enemiesLeft == 1 && this->bossSpawned == 0)
 	{
 		sf::Vector2f randomPos = RandomSpawning(this->player->getCenter().x, this->player->getCenter().y, this->player->getGlobalBounds());
-		this->activeEnemies.push_back(new RangedBoss(randomPos.x, randomPos.y, this->rangedTex, *(this->player)));
+		this->activeEnemies.push_back(new RangedBoss(randomPos.x, randomPos.y, this->bossTex, *(this->player)));
 		this->bossSpawned = 1;
 		this->spawnTimer = 0;
 	}
