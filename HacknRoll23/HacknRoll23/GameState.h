@@ -8,6 +8,7 @@
 #include "PlayerProjectile.h"
 #include "EnemyProjectile.h"
 #include "LevelsSystem.h"
+#include "PauseState.h"
 
 class GameState : public State
 {
@@ -84,5 +85,4 @@ public:
 	void render(RenderTarget* target = NULL);//draw stuff
 
 };
-
 #endif
