@@ -11,6 +11,7 @@ void GameState::initVariables()
 	this->noDamageTimer = 500.f;
 	this->meleeSpawned = 0;
 	this->rangedSpawned = 0;
+	this->bossSpawned = 0;
 	this->waveNum += 1;
 	this->spawnTimerMax = 200 * 1 / this->waveNum;
 	this->levels = new LevelsSystem();
@@ -106,6 +107,7 @@ void GameState::initEnemies()
 
 	if (!this->rangedTex.loadFromFile(RANGED_ENEMY_TEXTURE_SHEET))
 		throw("ERROR: Failed to load Player texture");
+
 }
 
 void GameState::initProjectile()
@@ -211,11 +213,30 @@ void GameState::updateEnemies(const float& dt)
 
 
 	if (this->meleeSpawned == 0 && this->rangedSpawned == 0)
+	{
 		this->enemiesLeft = this->numMelee[this->waveNum - 1] + this->numRanged[this->waveNum - 1];
+		if (this->waveNum == 5)
+			this->enemiesLeft++;
+	}
 
 	if (this->spawnTimer < this->spawnTimerMax)
 		this->spawnTimer++;
 
+	if (this->waveNum == 5 && this->enemiesLeft == 1 && this->bossSpawned == 0)
+	{
+		sf::Vector2f randomPos = RandomSpawning(this->player->getCenter().x, this->player->getCenter().y, this->player->getGlobalBounds());
+		this->activeEnemies.push_back(new RangedBoss(randomPos.x, randomPos.y, this->rangedTex, *(this->player)));
+		this->bossSpawned = 1;
+		this->spawnTimer = 0;
+	}
+
+	if (this->spawnTimer >= this->spawnTimerMax && this->meleeSpawned < this->numMelee[this->waveNum - 1]) //change to total number of enemies spawned per wave
+	{
+		sf::Vector2f randomPos = RandomSpawning(this->player->getCenter().x, this->player->getCenter().y, this->player->getGlobalBounds());
+		this->activeEnemies.push_back(new MeleeEnemy(randomPos.x, randomPos.y, this->meleeTex, *(this->player)));
+		this->spawnTimer = 0;
+		this->meleeSpawned++;
+	}
 
 	if (this->spawnTimer >= this->spawnTimerMax && this->rangedSpawned < this->numRanged[this->waveNum - 1]) //change to total number of enemies spawned per wave
 	{
@@ -223,13 +244,6 @@ void GameState::updateEnemies(const float& dt)
 		this->activeEnemies.push_back(new RangedEnemy(randomPos.x, randomPos.y, this->rangedTex, *(this->player)));
 		this->spawnTimer = 0;
 		this->rangedSpawned++;
-	}
-	if (this->spawnTimer >= this->spawnTimerMax && this->meleeSpawned < this->numMelee[this->waveNum - 1]) //change to total number of enemies spawned per wave
-	{
-		sf::Vector2f randomPos = RandomSpawning(this->player->getCenter().x, this->player->getCenter().y, this->player->getGlobalBounds());
-		this->activeEnemies.push_back(new MeleeEnemy(randomPos.x, randomPos.y, this->meleeTex, *(this->player)));
-		this->spawnTimer = 0;
-		this->meleeSpawned++;
 	}
 
 	for (int i = 0; i < this->activeEnemies.size(); i++)
@@ -311,7 +325,29 @@ void GameState::updateEnemyShooting(const float& dt)
 {
 	for (auto i : activeEnemies)
 	{
-		if (RangedEnemy* re = dynamic_cast<RangedEnemy*>(i))
+		if (this->bossSpawned)
+		{
+			RangedBoss* rb = dynamic_cast<RangedBoss*>(i);
+			if (rb != nullptr)
+			{
+				if (rb->isAttacking && rb->clock.getElapsedTime().asMilliseconds() > rb->attackInterval)
+				{
+					sf::Vector2f playerPos = this->player->getCenter();//world coord
+					sf::Vector2f normDir = vectorDirection(playerPos, rb->getPosition());
+
+					int damage = rb->getAttributeComp()->damageMax;
+
+					EnemyProjectile* newProj = new EnemyProjectile(rb->getPosition(), normDir, damage, 1, this->enemyProjectileTex);
+
+					this->enemyProjectiles.push_back(*newProj);
+
+					rb->resetDamageTimer();
+					rb->clock.restart();
+				}
+			}
+		
+		}
+		else if (RangedEnemy* re = dynamic_cast<RangedEnemy*>(i))
 		{
 			if (re != nullptr)
 			{
@@ -330,7 +366,9 @@ void GameState::updateEnemyShooting(const float& dt)
 					re->clock.restart();
 				}
 			}
+			
 		}
+
 	}
 
 	for (auto& tempProjectile : this->enemyProjectiles)
@@ -361,10 +399,9 @@ void GameState::updateView(const float& dt)
 
 void GameState::updateButtons()
 {
-	/*if (gui::isSpriteClicked(this->pauseButton, sf::Mouse::Left, *this->window)) {
-		this->gamesounds->gameStateMusic.stop();
+	if (gui::isSpriteClicked(this->pauseButton, sf::Mouse::Left, *this->window)) {
 		this->states->push(new PauseState(this->stateData));
-	}*/
+	}
 }
 
 void GameState::updateGameState(const float& dt)

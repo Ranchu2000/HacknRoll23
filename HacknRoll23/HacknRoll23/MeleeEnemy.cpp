@@ -25,7 +25,7 @@ MeleeEnemy::MeleeEnemy(float x, float y, sf::Texture& texture_sheet, Player& pla
 	this->createAnimation(texture_sheet);
 	this->createHitbox(this->sprite, 0.f, 0.f, 64.f, 64.f);
 	this->createMovement((rand() % (51)) + 400.f, 500.f, 200.f);
-	this->createAttribute(1, 5, 1);
+	this->createAttribute(1, 9, 2);
 	this->setPosition(x, y);
 	this->initAnimations();
 
