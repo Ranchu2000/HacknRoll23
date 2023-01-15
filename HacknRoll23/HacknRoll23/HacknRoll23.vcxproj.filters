@@ -89,6 +89,11 @@
     <ClCompile Include="EnemyProjectile.cpp">
       <Filter>Projectiles</Filter>
     </ClCompile>
+    <ClCompile Include="GameIntro.cpp" />
+    <ClCompile Include="SpawningLogic.cpp" />
+    <ClCompile Include="GameSounds.cpp">
+      <Filter>Music</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Enemy.h">
@@ -186,6 +191,12 @@
     <ClInclude Include="EnemyProjectile.h">
       <Filter>Projectiles</Filter>
     </ClInclude>
+    <ClInclude Include="GameIntro.h" />
+    <ClInclude Include="SpawningLogic.h" />
+    <ClInclude Include="Skills.h" />
+    <ClInclude Include="GameSounds.h">
+      <Filter>Music</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Enemies">
@@ -217,6 +228,9 @@
     </Filter>
     <Filter Include="Projectiles">
       <UniqueIdentifier>{b7b3f589-c2d7-4c20-9c58-fc30eb8e32d8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Music">
+      <UniqueIdentifier>{1cf669ab-2f56-45fb-b031-c0df27c2658e}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

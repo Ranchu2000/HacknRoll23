@@ -65,7 +65,20 @@
 #define PLAYER_UPGRADE_HEALTH 5
 #define MAX_UPGRADE_QTY 3
 
+//ENEMY
 #define MELEE_ENEMY_TEXTURE_SHEET "Resources/Textures/MeleeEnemy.png"
 #define RANGED_ENEMY_TEXTURE_SHEET "Resources/Textures/RangedEnemyComplete.png"
 #define ENEMY_PROJECTILE "Resources/Textures/ThumbsDown.png"
+
+//MUSIC
+#define MAIN_MENU_MUSIC "Resources/assets/MainMenuMusic.ogg"
+#define GAME_OVER_MUSIC "Resources/assets/GameOverMusic.ogg"
+#define GAME_STATE_MUSIC "Resources/assets/GameStateMusic.ogg"
+#define VICTORY_MUSIC "Resources/assets/VictoryMusic.ogg"
+
+#define ENEMY_TAKE_DMG_SOUND "Resources/assets/EnemyHitSound.wav"
+#define PLAYER_TAKE_DMG_SOUND "Resources/assets/TakeDamageSound.ogg"
+#define SHOOT_SOUND "Resources/assets/ShootSound.ogg"
+
+
 #endif
